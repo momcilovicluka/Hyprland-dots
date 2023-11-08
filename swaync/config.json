@@ -86,7 +86,7 @@
                 },
                 {
                     "label": "󰏘",
-                    "command": "bash $HOME/.scripts/wall.sh"
+                    "command": "bash $HOME/.config/hypr/scripts/Wallpaper.sh"
                 }
             ]
         }
