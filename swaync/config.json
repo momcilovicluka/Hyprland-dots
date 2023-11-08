@@ -1,0 +1,94 @@
+{
+    "$schema": "/etc/xdg/swaync/configSchema.json",
+    "positionX": "right",
+    "positionY": "top",
+    "layer": "overlay",
+    "control-center-layer": "top",
+    "layer-shell": true,
+    "cssPriority": "application",
+    "control-center-margin-top": 16,
+    "control-center-margin-bottom": 16,
+    "control-center-margin-right": 6,
+    "control-center-margin-left": 0,
+    "notification-icon-size": 64,
+    "notification-body-image-height": 100,
+    "notification-body-image-width": 200,
+    "timeout": 10,
+    "timeout-low": 5,
+    "timeout-critical": 0,
+    "fit-to-screen": true,
+    "control-center-width": 500,
+    "control-center-height": 600,
+    "notification-window-width": 500,
+    "keyboard-shortcuts": true,
+    "image-visibility": "when-available",
+    "transition-time": 200,
+    "hide-on-clear": false,
+    "hide-on-action": true,
+    "script-fail-notify": true,
+    "widgets": [
+        "dnd",
+        "title",
+        "notifications",
+        "mpris",
+        "volume",
+        "backlight",
+        "buttons-grid"
+    ],
+    "widget-config": {
+        "title": {
+            "text": "Notifications",
+            "clear-all-button": true,
+            "button-text": "Clear All"
+        },
+        "dnd": {
+            "text": "Do Not Disturb"
+        },
+        "label": {
+            "max-lines": 1,
+            "text": "Notification Center"
+        },
+        "mpris": {
+            "image-size": 128,
+            "image-radius": 20
+        },
+        "volume": {
+            "label": "󰕾 "
+        },
+        "backlight": {
+            "label": "󰃟 "
+        },
+        "buttons-grid": {
+            "actions": [
+                {
+                    "label": "󰐥",
+                    "command": "systemctl poweroff"
+                },
+                {
+                    "label": "󰜉",
+                    "command": "systemctl reboot"
+                },
+                {
+                    "label": "󰌾",
+                    "command": "gtklock"
+                },
+                {
+                    "label": "󰏥",
+                    "command": "systemctl suspend"
+                },
+                {
+                    "label": "󰕾",
+                    "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+                },
+                {
+                    "label": "󰍬",
+                    "command": "hyprshade toggle bluefilter"
+                },
+                {
+                    "label": "󰏘",
+                    "command": "bash $HOME/.scripts/wall.sh"
+                }
+            ]
+        }
+    }
+}

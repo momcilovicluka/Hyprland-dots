@@ -1,0 +1,82 @@
+// ### DEFAULT ### //
+
+{
+"include": "~/.config/waybar/modules",
+"layer": "top",
+//"mode": "dock",
+"exclusive": true,
+"passthrough": false,
+"position": "top",
+"spacing": 3,
+"fixed-center": true,
+"ipc": true,
+"margin-top": 6,
+"margin-left": 8,
+"margin-right": 8,
+
+"modules-left": [
+	"hyprland/workspaces",
+	//"custom/separator#dot-line",
+	"cpu",
+	//"custom/separator#dot-line", 
+	"temperature",
+	//"custom/separator#dot-line", 
+	"memory",
+	//"custom/separator#dot-line",
+	"custom/weather",
+	"wlr/taskbar",
+	],
+  
+"modules-center": [
+	"custom/menu",
+	//"custom/separator#dot-line",
+	"idle_inhibitor", 
+	//"custom/separator#dot-line",
+	"clock",
+	//"custom/separator#dot-line",
+	//"custom/light_dark",
+	//"custom/separator#dot-line",	
+	"custom/lock",
+	], 
+
+"modules-right": [
+	"hyprland/window", 
+	"tray",
+	//"custom/separator#dot-line",
+	"cava", 
+	"battery",
+	//"custom/separator#dot-line", 
+	"backlight",
+	//"custom/separator#dot-line",
+	//"pulseaudio",
+	//"custom/separator#dot-line",
+	"wireplumber", 
+	"pulseaudio#microphone",
+	//"custom/separator#dot-line",
+	"keyboard-state",
+	//"custom/separator#dot-line",
+	"custom/notifications",
+	"custom/power",
+	],
+
+"custom/notifications": {
+    "tooltip": false,
+    "format": "{} {icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "/home/luka/.config/swaync/sidebar.sh",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+}
