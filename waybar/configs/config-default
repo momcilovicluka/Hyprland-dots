@@ -7,12 +7,12 @@
 "exclusive": true,
 "passthrough": false,
 "position": "top",
-"spacing": 3,
+"spacing": 2,
 "fixed-center": true,
 "ipc": true,
-"margin-top": 6,
-"margin-left": 8,
-"margin-right": 8,
+"margin-top": 3,
+"margin-left": 3,
+"margin-right": 3,
 
 "modules-left": [
 	"hyprland/workspaces",
@@ -64,7 +64,7 @@
     "format": "{} {icon}",
     "format-icons": {
       "notification": "<span foreground='red'><sup></sup></span>",
-      "none": "",
+      "none": "<span><sup> </sup></span>",
       "dnd-notification": "<span foreground='red'><sup></sup></span>",
       "dnd-none": "",
       "inhibited-notification": "<span foreground='red'><sup></sup></span>",

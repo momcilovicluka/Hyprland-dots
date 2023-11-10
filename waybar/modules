@@ -81,7 +81,8 @@
 	"interval": 1,
   //"format": " {:%I:%M %p}",
   "format": " {:%H:%M:%S}",
-  "format-alt": " {:%H:%M   %Y, %d %B, %A}",
+  //"format-alt": " {:%H:%M   %Y, %d %B, %A}",
+  "format-alt": " {:%H:%M:%S %a-%d-%m}",
   "tooltip-format": "<tt><small>{calendar}</small></tt>",
   "calendar": {
     "mode"          : "year",

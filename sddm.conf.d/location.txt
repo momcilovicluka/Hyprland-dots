@@ -1,0 +1,5 @@
+10-theme.conf file goes in /etc/sddm.conf.d folder
+10-theme.conf -> /etc/sddm.conf.d/10-theme.conf
+
+theme folders go into /usr/share/sddm/themes folder
+elarun, maldives, maya, tokyo-night-sddm -> /usr/share/sddm/themes/
