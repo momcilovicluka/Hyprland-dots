@@ -29,6 +29,7 @@ while true; do
 			swww img "$img" --transition-type any
 			wal -i $img -n
 			pywalfox update
+			pywal-discord -p /home/luka/.config/VencordDesktop/VencordDesktop/themes/
 			sleep $INTERVAL
 		done
 done

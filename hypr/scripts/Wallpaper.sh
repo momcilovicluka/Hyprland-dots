@@ -14,6 +14,7 @@ change_swaybg(){
   swww img ${RANDOMPICS} --transition-fps 60 --transition-type any --transition-duration 3
   wal -i ${RANDOMPICS} -n
   pywalfox update
+  pywal-discord -p /home/luka/.config/VencordDesktop/VencordDesktop/themes/
 }
 
 change_swww(){
@@ -22,6 +23,7 @@ change_swww(){
   swww img ${RANDOMPICS} --transition-fps 60 --transition-type any --transition-duration 3
   wal -i ${RANDOMPICS} -n
   pywalfox update
+  pywal-discord -p /home/luka/.config/VencordDesktop/VencordDesktop/themes/
 }
 
 change_current(){
