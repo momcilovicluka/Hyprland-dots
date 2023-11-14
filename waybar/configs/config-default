@@ -27,17 +27,16 @@
 	"wlr/taskbar",
 	],
   
-"modules-center": [
-	"custom/menu",
+//"modules-center": [
+	//"custom/menu",
 	//"custom/separator#dot-line",
-	"idle_inhibitor", 
 	//"custom/separator#dot-line",
-	"clock",
+	//"clock",
 	//"custom/separator#dot-line",
 	//"custom/light_dark",
 	//"custom/separator#dot-line",	
-	"custom/lock",
-	], 
+	//"custom/lock",
+//	], 
 
 "modules-right": [
 	"hyprland/window", 
@@ -56,6 +55,8 @@
 	"keyboard-state",
 	//"custom/separator#dot-line",
 	"custom/notifications",
+	"clock",
+	"idle_inhibitor",
 	"custom/power",
 	],
 
