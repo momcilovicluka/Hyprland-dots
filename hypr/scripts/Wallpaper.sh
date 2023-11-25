@@ -4,6 +4,9 @@ DIR=$HOME/Pictures/wallpapers/Dynamic-Wallpapers/Dark/
 PICS=($(find ${DIR} -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.gif" \)))
 RANDOMPICS=${PICS[ $RANDOM % ${#PICS[@]} ]}
 
+pywal_script=$HOME/.config/hypr/scripts/PywalSwww.sh
+pywal_refresh=$HOME/.config/hypr/scripts/Refresh.sh
+
 change_swaybg(){
   #pkill swww
   #pkill swaybg
@@ -15,6 +18,9 @@ change_swaybg(){
   wal -i ${RANDOMPICS} -n
   pywalfox update
   pywal-discord -p /home/luka/.config/VencordDesktop/VencordDesktop/themes/
+  cp $HOME/.cache/wal/colors-rofi-dark.rasi $HOME/.config/rofi/pywal-color/pywal-theme.rasi
+  $pywal_script
+  $pywal_refresh
 }
 
 change_swww(){
@@ -24,6 +30,9 @@ change_swww(){
   wal -i ${RANDOMPICS} -n
   pywalfox update
   pywal-discord -p /home/luka/.config/VencordDesktop/VencordDesktop/themes/
+  cp $HOME/.cache/wal/colors-rofi-dark.rasi $HOME/.config/rofi/pywal-color/pywal-theme.rasi
+  $pywal_script
+  $pywal_refresh
 }
 
 change_current(){
