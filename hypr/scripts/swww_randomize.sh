@@ -40,4 +40,4 @@ while true; do
 			$pywal_refresh
 			sleep $INTERVAL
 		done
-dones
+done
