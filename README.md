@@ -24,3 +24,8 @@ Dotfiles for my Arch Hyprland setup. Based on JaKooLit dots (https://github.com/
 ### Shell config: [momcilovicluka/powershell](https://github.com/momcilovicluka/powershell) (Yes i use windows/windows terminal/powershell/oh-my-posh/winget/scoop 👊Fight me)
 
 ## 🐜 ScreenShots
+![Desktop](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Desktop.png?raw=true)
+![Desktop](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Thunar_Cava_Htop.png?raw=true)
+![Desktop](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Ranger_Thunar_Wofi.png?raw=true)
+![Desktop](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Swaync.png?raw=true)
+![Desktop](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Firefox.png?raw=true)
