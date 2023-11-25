@@ -11,12 +11,12 @@ Dotfiles for my Arch Hyprland setup. Based on JaKooLit dots (https://github.com/
 - **Status Bar** • [Waybar](https://github.com/Alexays/Waybar)🧴 Patched waybar following hyprland faq!
 - **Terminal** • [Kitty](https://github.com/kovidgoyal/kitty) 💻 A powerful term with gpu support!
 - **Shell** • [Zsh](https://www.zsh.org/) with Theme [Starship](https://github.com/starship/starship)🐚 Cross Shell Platform!
-- **Application Launcher** • [Wofi](https://hg.sr.ht/~scoopta/wofi)🚀 Will upgrade to Rofi soon!
+- **Application Launcher** • [Wofi](https://hg.sr.ht/~scoopta/wofi)🚀 + Rofi as alternative
 - **Notification Daemon** • [SwayNC](https://github.com/ErikReider/SwayNotificationCenter) 🍃 Customization to the max!
 - **File Manager** • [Ranger](https://github.com/ranger/ranger)📁 A VIM-inspired filemanager for the console!
 - **File Manager GUI** • [Thunar](https://wiki.archlinux.org/title/thunar)📂 File browser for Xfce!
-- **Code Editor** • [Neovim](https://github.com/neovim/neovim)🗞️ Hope Prime is proud!
-- **Music Player** • [Spicetify](https://github.com/spicetify/spicetify-cli)🎹 A Customize Spotify client!
+- **Code Editor** • [Neovim](https://github.com/neovim/neovim)🗞️ Started learning. Hope Prime is proud!
+- **Music Player** • [Spicetify](https://github.com/spicetify/spicetify-cli)🎹 A Customizeable Spotify client!
 - **Audio Visualizer** • [Cava](https://github.com/karlstav/cava)🎼 Cross-platform Audio Visualizer!
 
 ### Spotify config: [momcilovicluka/spicetify](https://github.com/momcilovicluka/spicetify)
