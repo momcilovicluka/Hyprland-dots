@@ -40,6 +40,7 @@
 
 "modules-right": [
 	"hyprland/window", 
+	"network#speed",
 	"tray",
 	//"custom/separator#dot-line",
 	"cava", 
@@ -67,11 +68,11 @@
       "notification": "<span foreground='red'><sup></sup></span>",
       "none": "<span><sup> </sup></span>",
       "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": "",
+      "dnd-none": "<span><sup> </sup></span>",
       "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "inhibited-none": "",
+      "inhibited-none": "<span><sup> </sup></span>",
       "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
+      "dnd-inhibited-none": "<span><sup> </sup></span>"
     },
     "return-type": "json",
     "exec-if": "which swaync-client",

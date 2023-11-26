@@ -125,6 +125,7 @@ tooltip label{
 #mode,
 #mpd,
 #network,
+#network-speed,
 #pulseaudio,
 #taskbar button,
 #taskbar,
@@ -258,6 +259,10 @@ label:focus {
 
 #network.disconnected {
     color: @alert;
+}
+
+#network.speed {
+    color: #00ddff;
 }
 
 #pulseaudio {
