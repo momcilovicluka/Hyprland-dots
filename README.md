@@ -25,7 +25,7 @@ Dotfiles for my Arch Hyprland setup. Based on JaKooLit dots (https://github.com/
 
 ## 🐜 ScreenShots
 ![Desktop](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Desktop.png?raw=true)
-![Desktop](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Thunar_Cava_Htop.png?raw=true)
-![Desktop](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Ranger_Thunar_Wofi.png?raw=true)
-![Desktop](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Swaync.png?raw=true)
-![Desktop](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Firefox.png?raw=true)
+![Thunar, Cava, Htip](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Thunar_Cava_Htop.png?raw=true)
+![Ranger, Thunar, Wofi](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Ranger_Thunar_Wofi.png?raw=true)
+![Swaync](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Swaync.png?raw=true)
+![Firefox](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Firefox.png?raw=true)
