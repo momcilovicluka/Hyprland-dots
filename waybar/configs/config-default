@@ -25,7 +25,8 @@
 	//"custom/separator#dot-line",
 	"custom/weather",
 	"custom/pacman",
-	"wlr/taskbar",
+	"mpris",
+	"wlr/taskbar"
 	],
   
 //"modules-center": [
@@ -40,7 +41,6 @@
 //	], 
 
 "modules-right": [
-	"mpris",
 	"hyprland/window", 
 	"network#speed",
 	"tray",
