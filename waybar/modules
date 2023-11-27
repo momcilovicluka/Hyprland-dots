@@ -31,7 +31,7 @@
     "warning": 30,
     "critical": 15
            },
-  "format": "{icon}  {capacity}%",
+  "format": "{icon} {capacity}%",
   "format-charging": " {capacity}%",
   "format-plugged": "󱘖 {capacity}%",
   "format-full": "{icon} Full",
@@ -74,7 +74,7 @@
   "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
   "actions": {
       "on-click-right": "mode"
-             }
+  }
 },
  
 "clock": {
@@ -126,7 +126,7 @@
 },
   
 "hyprland/language": {
-  "format": "Lang: {}",
+  "format": "{}",
   "format-en": "US",
   "format-tr": "Korea",
   "keyboard-name": "at-translated-set-2-keyboard",
@@ -311,8 +311,10 @@
   "on-click": "activate",
   "on-click-middle": "close",
   "ignore-list": [
-        "wofi"  
-                 ]
+        "wofi",
+	"Spotify",
+	"VencordDesktop"  
+  ]
 },
     
 "custom/cycle_wall":{
@@ -479,7 +481,7 @@
   //"thermal-zone": 0,
   "critical-threshold": 80,
   "format-critical": "{icon}\n{temperatureC}°C",
-  "format": " {icon}",
+  "format": "{icon}",
   "format-icons": [""],
   "on-click-right": "foot --title nvtop sh -c 'nvtop'"
 },
@@ -490,5 +492,33 @@
   "on-click": "$HOME/.config/hypr/scripts/WofiPower.sh",
   "on-click-right": "~/.config/hypr/scripts/ChangeBlur.sh",
 },
-}
 
+"mpris": {
+      "format": "{player_icon} {title}",
+      "format-paused": "{player_icon} {status_icon} {title}",
+      "max-length": 45,
+      "player-icons": {
+        "chromium": "",
+        "default": "",
+        "firefox": "",
+        "kdeconnect": "",
+        "mopidy": "",
+        "mpv": "",
+        "spotify": ""
+      },
+      "status-icons": {
+        "paused": "",
+        "playing": "",
+        "stopped": ""
+      }
+  },
+
+"custom/pacman": {
+    "format": "{}  ",
+    "interval": 3600,
+    "return-type": "json",
+    "exec": "~/.config/hypr/scripts/systemupdate.sh",
+    "on-click": "~/.config/hypr/scripts/systemupdate.sh up",
+    "tooltip": true,
+  }
+}

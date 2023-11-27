@@ -24,6 +24,7 @@
 	"memory",
 	//"custom/separator#dot-line",
 	"custom/weather",
+	"custom/pacman",
 	"wlr/taskbar",
 	],
   
@@ -39,6 +40,7 @@
 //	], 
 
 "modules-right": [
+	"mpris",
 	"hyprland/window", 
 	"network#speed",
 	"tray",
@@ -56,6 +58,7 @@
 	"keyboard-state",
 	//"custom/separator#dot-line",
 	"custom/notifications",
+	"hyprland/language",
 	"clock",
 	"idle_inhibitor",
 	"custom/power",

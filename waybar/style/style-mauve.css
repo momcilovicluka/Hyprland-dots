@@ -124,6 +124,7 @@ tooltip label{
 #memory,
 #mode,
 #mpd,
+#mpris,
 #network,
 #network-speed,
 #pulseaudio,
@@ -138,6 +139,7 @@ tooltip label{
 #custom-light_dark,
 #custom-lock,
 #custom-menu,
+#custom-pacman,
 #custom-power_vertical,
 #custom-power,
 #custom-spotify,
@@ -370,4 +372,20 @@ label:focus {
     color: #606060;
     margin: 0 1px;
     padding-bottom: 5px;
+}
+
+#custom-pacman {
+    color: rgb(202, 131, 51);
+}
+
+#mpris {
+    color: #00dd00;
+}
+
+#hyprland_language {
+    color: red;
+}
+
+#custom-notifications {
+    color: #4b91fa;
 }
