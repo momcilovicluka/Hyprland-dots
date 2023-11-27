@@ -46,9 +46,9 @@ Follow installation instructions [here](https://github.com/JaKooLit/Hyprland-Dot
 ### Discord config: [momcilovicluka/discord](https://github.com/momcilovicluka/discord) <a name = "discord"></a>
 
 ## ScreenShots 🖼️<a name = "screenshots"></a>
-![Desktop](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Desktop.png?raw=true) <a name = "desktop"></a>
-![Thunar, Cava, Htop](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Thunar_Cava_Htop.png?raw=true) <a name = "thunar_cava_htop"></a>
-![Ranger, Neofetch, Thunar, Wofi](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Ranger_Neofetch_Thunar_Wofi.png?raw=true) <a name = "ranger_neofetch_thunar_wofi"></a>
-![Swaync](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Swaync.png?raw=true) <a name = "swaync"></a>
-![Sddm](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Sddm.png?raw=true) <a name = "sddm"></a>
-![Firefox](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Firefox.png?raw=true) <a name = "firefox"></a>
+<a name = "desktop"></a> ![Desktop](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Desktop.png?raw=true)
+<a name = "thunar_cava_htop"></a> ![Thunar, Cava, Htop](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Thunar_Cava_Htop.png?raw=true)
+<a name = "ranger_neofetch_thunar_wofi"></a> ![Ranger, Neofetch, Thunar, Wofi](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Ranger_Neofetch_Thunar_Wofi.png?raw=true)
+<a name = "swaync"></a> ![Swaync](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Swaync.png?raw=true)
+<a name = "sddm"></a> ![Sddm](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Sddm.png?raw=true)
+<a name = "firefox"></a> ![Firefox](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Firefox.png?raw=true)
