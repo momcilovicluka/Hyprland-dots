@@ -38,12 +38,12 @@ Follow installation instructions [here](https://github.com/JaKooLit/Hyprland-Dot
 - **Music Player** • [Spicetify](https://github.com/spicetify/spicetify-cli)🎹 A Customizeable Spotify client!
 - **Audio Visualizer** • [Cava](https://github.com/karlstav/cava)🎼 Cross-platform Audio Visualizer!
 
-### Shell config: [momcilovicluka/powershell](https://github.com/momcilovicluka/powershell) <a name = "shell"></a>
+#### Shell config: [momcilovicluka/powershell](https://github.com/momcilovicluka/powershell) <a name = "shell"></a>
 (Yes i use windows/windows terminal/powershell/oh-my-posh/winget/scoop 👊Fight me)
 
-### Spotify config: [momcilovicluka/spicetify](https://github.com/momcilovicluka/spicetify) <a name = "spotify"></a>
+#### Spotify config: [momcilovicluka/spicetify](https://github.com/momcilovicluka/spicetify) <a name = "spotify"></a>
 
-### Discord config: [momcilovicluka/discord](https://github.com/momcilovicluka/discord) <a name = "discord"></a>
+#### Discord config: [momcilovicluka/discord](https://github.com/momcilovicluka/discord) <a name = "discord"></a>
 
 ## ScreenShots 🖼️<a name = "screenshots"></a>
 <a name = "desktop"></a> ![Desktop](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Desktop.png?raw=true)
