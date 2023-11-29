@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Check for updates
-aur=`yay -Qua | wc -l`
+aur=`yay -Qu | wc -l`
 
 # Calculate total available updates
 upd=$(( aur ))
@@ -17,4 +17,3 @@ fi
 if [ "$1" == "up" ] ; then
     kitty --title systemupdate sh -c "${aurhlpr} -Syu $fpk_exup"
 fi
-

@@ -523,6 +523,7 @@
     "return-type": "json",
     "exec": "~/.config/hypr/scripts/systemupdate.sh",
     "on-click": "~/.config/hypr/scripts/systemupdate.sh up",
+    "on-right-click": "~/.config/hypr/scripts/systemupdate.sh",
     "tooltip": true,
   }
 }
