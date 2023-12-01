@@ -5,7 +5,9 @@
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/momcilovicluka/Hyprland-Dots?style=for-the-badge&color=0000ff) ![GitHub last commit](https://img.shields.io/github/last-commit/momcilovicluka/Hyprland-Dots?style=for-the-badge&color=0000ff) ![GitHub repo size](https://img.shields.io/github/repo-size/momcilovicluka/Hyprland-Dots?style=for-the-badge&color=0000ff)
 
-Dotfiles for my Arch Hyprland setup. Based on [JaKooLit dots](https://github.com/JaKooLit/Hyprland-Dots) with my modifications as i see fit.
+Dotfiles for my Arch Hyprland setup. Based on [JaKooLit dots](https://github.com/JaKooLit/Hyprland-Dots) with modifications, customisations, additions and improvements as I see fit.
+
+If you like the dots a star🌟 on the repository would be greatly appreciated 💞
 </div>
 
 ## Contents 📚
@@ -21,6 +23,7 @@ Dotfiles for my Arch Hyprland setup. Based on [JaKooLit dots](https://github.com
   - [SwayNC](#swaync)
   - [Sddm](#sddm)
   - [Firefox](#firefox)
+- [Contributing 🤝](#contributing)
 
 ## Installation 🛠️<a name = "installation"></a>
 Follow installation instructions [here](https://github.com/JaKooLit/Hyprland-Dots) and then copy-paste my configs to ~/.config
@@ -39,7 +42,7 @@ Follow installation instructions [here](https://github.com/JaKooLit/Hyprland-Dot
 - **Audio Visualizer** • [Cava](https://github.com/karlstav/cava)🎼 Cross-platform Audio Visualizer!
 
 #### Shell config: [momcilovicluka/powershell](https://github.com/momcilovicluka/powershell) <a name = "shell"></a>
-(Yes i use windows/windows terminal/powershell/oh-my-posh/winget/scoop 👊Fight me)
+(Yes I use Windows/Windows Terminal/PowerShell/oh-my-posh/winget/scoop 👊Fight me)
 
 #### Spotify config: [momcilovicluka/spicetify](https://github.com/momcilovicluka/spicetify) <a name = "spotify"></a>
 
@@ -52,3 +55,8 @@ Follow installation instructions [here](https://github.com/JaKooLit/Hyprland-Dot
 <a name = "swaync"></a> ![Swaync](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Swaync.png?raw=true)
 <a name = "sddm"></a> ![Sddm](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Sddm.png?raw=true)
 <a name = "firefox"></a> ![Firefox](https://github.com/momcilovicluka/Hyprland-dots/blob/master/Screenshots/Firefox.png?raw=true)
+
+## Contributing 🤝 <a name = "contributing"></a>
+Contributions are welcome! Feel free to clone/make pull requests to your heart's content. <br>
+Feel encouraged to open issues if you have any suggestions for improvements or discover bugs. <br>
+Also, any contributions that are related to adding/improving styles and/or CSS configs are highly welcomed.
