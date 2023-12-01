@@ -501,6 +501,7 @@
       "format": "{player_icon} {title}",
       "format-paused": "{player_icon} {status_icon} {title}",
       "max-length": 45,
+      "interval": 5,
       "player-icons": {
         "chromium": "",
         "default": "",
