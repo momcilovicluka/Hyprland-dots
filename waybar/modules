@@ -390,6 +390,7 @@
   "return-type": "json",
   "exec": "~/.config/hypr/scripts/Weather.sh",
   //"exec": "~/.config/hypr/scripts/Weather.py",
+  "on-click-right": "~/.config/hypr/scripts/Weather.py",
   "exec-if": "ping wttr.in -c1",
   "tooltip" : true,
 },
@@ -524,7 +525,7 @@
     "return-type": "json",
     "exec": "~/.config/hypr/scripts/systemupdate.sh",
     "on-click": "~/.config/hypr/scripts/systemupdate.sh up",
-    "on-right-click": "~/.config/hypr/scripts/systemupdate.sh",
+    "on-click-right": "~/.config/hypr/scripts/systemupdate.sh",
     "tooltip": true,
   }
 }
