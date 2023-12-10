@@ -1,7 +1,9 @@
+@import '../../.cache/wal/colors-waybar.css';
+
 window {
     font-family: monospace;
     font-size: 14pt;
-    color: #0000ff; /* text */
+    color: @color1; /* text */
     background-color: rgba(0, 0, 50, 0.5);
 }
 
@@ -9,86 +11,68 @@ button {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 25%;
-    border: none;
+    background-color: rgba(30, 30, 46, 0);
+	animation: gradient_f 20s ease-in infinite;
+    border-radius: 30px;
+    
     min-width: 230px;
     min-height: 150px;
-    background-color: rgba(30, 30, 46, 0);
     margin: 5px;
-    border-radius: 20px;
     padding: 20px;
-	animation: gradient_f 20s ease-in infinite;
-    transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 button:hover {
-    color: #00ffdd;
-    background-size: 50%;
+    color: #00ff55;
+    background-color: @color2; 
+    border-radius: 50px;
     margin: 30px;
-    border-radius: 80px; 
     transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    animation: gradient_f 20s ease-in infinite;
+    box-shadow: 0 0 20px @color5; 
+    background-size: 40%;
+}
+
+button:focus {
+    background-color: rgb(14, 18, 255);
+    color: #00ff00;
+    background-size: 35%;
+    border-radius: 50px;
     box-shadow: 0 0 20px #0000ff; 
+    border: 0px;
+    transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    animation: gradient_f 20s ease-in infinite;
 }
 
 button:hover#lock {
 	/*background-color: rgba(49, 50, 68, 0.2);*/
-	background-size: 25%;
 	margin-right : 30px;
 	margin-bottom : 30px;
-	border-radius: 20px;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
 }
 
 button:hover#logout {
 	/*background-color: rgba(49, 50, 68, 0.2);*/
-	background-size: 25%;
 	margin-right : 30px;
 	margin-top : 30px;
-	border-radius: 20px;
-    animation: gradient_f 20s ease-in infinite;
-	transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
 }
 
 button:hover#shutdown {
 	/*background-color: rgba(49, 50, 68, 0.2);*/
-	background-size: 25%;
 	margin-left : 20px;
 	margin-bottom : 30px;
-	border-radius: 20px;
-    animation: gradient_f 20s ease-in infinite;
-	transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
 }
 
 button:hover#reboot {
 	/*background-color: rgba(49, 50, 68, 0.2);*/
-	background-size: 25%;
 	margin-left : 30px;
 	margin-top : 30px;
-	border-radius: 20px;
-    	animation: gradient_f 20s ease-in infinite;
-	transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
 }
 
 button:hover#suspend {
 	/*background-color: rgba(49, 50, 68, 0.2);*/
-	background-size: 25%;
 	margin-left : 30px;
 	margin-top : 30px;
-	border-radius: 20px;
-    	animation: gradient_f 20s ease-in infinite;
-	transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
 }
 
-button:focus {
-    background-color: rgba(180, 190, 254, 0.3);
-    color: #1e1e2e;
-	background-size: 25%;
-	margin-left : 30px;
-	margin-top : 30px;
-	border-radius: 20px;
-    animation: gradient_f 20s ease-in infinite;
-	transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
-}
 
 #lock {
     background-image: image(url("./lock.png"));

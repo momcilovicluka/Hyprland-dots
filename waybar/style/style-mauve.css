@@ -164,7 +164,8 @@ tooltip label{
 
 #window,
 #workspaces {
-    margin: 0 3px;
+    margin: 0 1px;
+    color: #ff609d;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -248,7 +249,7 @@ label:focus {
 }
 
 #backlight {
-    color: #cdd6f4;
+    color: #f9fc56;
 }
 
 #bluetooth {
@@ -268,18 +269,18 @@ label:focus {
 }
 
 #pulseaudio {
-    color: @accent4;
+    color: #ff00aa;
 }
 
 #pulseaudio-muted {
-    color: @accent2;
+    color: #ff0050;
 }
 #wireplumber {
-    color: @accent4;
+    color: #aa00ff;
 }
 
 #wireplumber-muted {
-    color: @accent2;
+    color: #ff0050;
 }
 
 #pluseaudio-source-muted{

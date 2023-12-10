@@ -501,7 +501,7 @@
 "mpris": {
       "format": "{player_icon} {title}",
       "format-paused": "{player_icon} {status_icon} {title}",
-      "max-length": 45,
+      "max-length": 100,
       "interval": 5,
       "player-icons": {
         "chromium": "",
