@@ -1,12 +1,15 @@
 #!/bin/bash
 
+pywal_script=$HOME/.config/hypr/scripts/PywalSwww.sh
+pywal_refresh=$HOME/.config/hypr/scripts/Refresh.sh
+
 # WALLPAPERS PATH
 DIR=$HOME/Pictures/wallpapers
 
 # Transition config (type swww img --help for more settings
-FPS=30
+FPS=60
 TYPE="simple"
-DURATION=3
+DURATION=1
 
 # wofi window config (in %)
 WIDTH=10
@@ -64,11 +67,15 @@ main() {
     # random choice case
     if [ "$choice" = "$RANDOM_PIC_NAME" ]; then
         swww img ${DIR}/${RANDOM_PIC} $SWWW_PARAMS
+	$pywal_script
+  	$pywal_refresh
         return
     fi
     
     pic_index=$(echo $choice | cut -d. -f1)
     swww img ${DIR}/${PICS[$pic_index]} $SWWW_PARAMS
+    $pywal_script
+    $pywal_refresh
 }
 
 # Check if wofi is already running
