@@ -3,9 +3,9 @@
   "interval": 2,
   "align": 0,
   "rotate": 0,
-  //"format": "{icon} {percent}%",
+  "format": "{icon} {percent}%",
   //"format-icons": ["󰃞", "󰃟", "󰃠"],
-  "format": "{icon}",
+  //"format": "{icon}",
   "format-icons": ["󰛩", "󱩎", "󱩏", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󰛨"],
   "tooltip-format": "{percent}%",
   "icon-size": 10,
@@ -298,7 +298,7 @@
 },
     
 "wireplumber": {
-  "format": "{icon} {volume} %",
+  "format": "{icon} {volume}%",
   "format-muted": " Mute",
   "on-click": "~/.config/hypr/scripts/Volume.sh --toggle",
   "on-click-right": "pavucontrol -t 3",
