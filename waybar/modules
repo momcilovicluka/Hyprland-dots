@@ -527,5 +527,26 @@
     "on-click": "~/.config/hypr/scripts/systemupdate.sh up",
     "on-click-right": "~/.config/hypr/scripts/systemupdate.sh",
     "tooltip": true,
+  },
+
+"custom/notifications": {
+    "tooltip": false,
+    "format": "{} {icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "<span><sup> </sup></span>",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "<span><sup> </sup></span>",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "<span><sup> </sup></span>",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": "<span><sup> </sup></span>"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "/home/luka/.config/swaync/sidebar.sh",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   }
 }
