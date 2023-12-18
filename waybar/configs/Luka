@@ -21,6 +21,7 @@
 		"temperature",
 		//"custom/separator#dot-line", 
 		"memory",
+		"disk",
 		//"custom/separator#dot-line",
 		"custom/weather",
 		"custom/pacman",

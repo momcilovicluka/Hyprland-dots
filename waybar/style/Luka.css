@@ -118,6 +118,7 @@ tooltip label {
 #clock,
 #cpu,
 #disk,
+#hyprland_language,
 #idle_inhibitor,
 #keyboard-state label,
 #keyboard-state label.locked,
@@ -140,6 +141,7 @@ tooltip label {
 #custom-light_dark,
 #custom-lock,
 #custom-menu,
+#custom-notifications,
 #custom-pacman,
 #custom-power_vertical,
 #custom-power,
@@ -155,7 +157,7 @@ tooltip label {
 #custom-weather.showyIcyDay,
 #custom-weather.snowyIcyNight,
 #custom-weather.sunnyDay {
-    padding: 0px 4px;
+    padding: 0px 3px;
     /*margin: 4px 3px 5px 3px;*/
     /*color: @fgcolor;*/
     /* background-color: #bbccdd; */
