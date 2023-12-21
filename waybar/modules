@@ -153,6 +153,7 @@
 		"path": "/",
 		//"format-alt-click": "click",
 		"format": "{percentage_used}% 󰋊",
+		"format-alt": "{used}/{total} 󰋊",
 		//"tooltip": true,
 		"tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)",
 	},
@@ -329,7 +330,7 @@
 	},
 	"tray": {
 		"icon-size": 17,
-		"spacing": 8,
+		"spacing": 3,
 	},
 	"wireplumber": {
 		"format": "{icon} {volume}%",
@@ -528,21 +529,22 @@
 		"on-click-right": "~/.config/hypr/scripts/ChangeBlur.sh",
 	},
 	"mpris": {
-		"format": "{player_icon} {title}",
+		"format": "{player_icon} {title}-{artist}",
 		"format-paused": "{player_icon} {status_icon} {title}",
 		"max-length": 100,
-		"interval": 5,
+		"interval": 2,
 		"on-click-middle": "playerctl play-pause",
 		"on-click": "playerctl next",
 		"on-click-right": "playerctl previous",
 		"player-icons": {
 			"chromium": "",
-			"default": "",
+			"default": "",
 			"firefox": "",
 			"kdeconnect": "",
 			"mopidy": "",
 			"mpv": "",
-			"spotify": ""
+			"spotify": "",
+			"vlc": "󰕼"
 		},
 		"status-icons": {
 			"paused": "",
