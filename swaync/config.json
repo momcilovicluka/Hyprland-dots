@@ -13,8 +13,8 @@
     "notification-icon-size": 64,
     "notification-body-image-height": 100,
     "notification-body-image-width": 200,
-    "timeout": 10,
-    "timeout-low": 5,
+    "timeout": 5,
+    "timeout-low": 2,
     "timeout-critical": 0,
     "fit-to-screen": true,
     "control-center-width": 500,
@@ -70,7 +70,7 @@
                 },
                 {
                     "label": "󰌾",
-                    "command": "gtklock"
+                    "command": "$HOME/.config/hypr/scripts/LockScreen.sh"
                 },
                 {
                     "label": "󰏥",
@@ -78,15 +78,35 @@
                 },
                 {
                     "label": "󰕾",
-                    "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+                    "command": "~/.config/hypr/scripts/Volume.sh --toggle"
                 },
                 {
                     "label": "󰍬",
-                    "command": "hyprshade toggle bluefilter"
+                    "command": "~/.config/hypr/scripts/Volume.sh --toggle-mic"
                 },
                 {
                     "label": "󰏘",
                     "command": "bash $HOME/.config/hypr/scripts/Wallpaper.sh"
+                },
+		{
+		    "label": "",
+		    "command": "~/.config/hypr/scripts/DarkLight.sh"
+		},
+		{
+		    "label": "",
+		    "command": "~/.config/hypr/scripts/Help.sh"
+		},
+                {
+                    "label": "󰂯",
+                    "command": "blueman-manager"
+                },
+                {
+                    "label": "󰀝",
+                    "command": "~/.config/hypr/scripts/AirplaneMode.sh"
+                },
+                {
+                    "label": "󰃟 ",
+                    "command": "~/.config/hypr/scripts/Sunset.sh"
                 }
             ]
         }
