@@ -1,0 +1,6 @@
+{
+    "label" : "windows",
+    "action" : "systemctl reboot --boot-loader-entry=auto-windows",
+    "text" : "Windows",
+    "keybind" : "w"
+}
