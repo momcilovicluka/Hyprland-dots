@@ -24,17 +24,19 @@ window#waybar {
   transition-duration: 0.5s;
 }
 
+#taskbar button,
 #workspaces button {
-  padding: 0 10px;
   color: @foreground;
 }
 
+#taskbar button.active,
 #workspaces button.active {
   border-bottom: 1px solid @green;
 }
 
+#taskbar button.urgent,
 #workspaces button.urgent {
-  border-bottom: 2px solid @yellow;
+  border-bottom: 2px solid @red;
 }
 
 #submap {
@@ -45,7 +47,6 @@ window#waybar {
 #backlight-slider,
 #battery,
 #bluetooth,
-#cava,
 #clock,
 #cpu,
 #disk,
@@ -73,7 +74,7 @@ window#waybar {
 #custom-menu,
 #custom-power_vertical,
 #custom-power,
-#custom-speaker,
+#custom-swaync,
 #custom-updater,
 #custom-weather,
 #custom-weather.clearNight,
@@ -87,10 +88,7 @@ window#waybar {
 #custom-weather.snowyIcyNight,
 #custom-weather.sunnyDay {
   color: @foreground;
-	padding-top: 3px;
-	padding-bottom: 3px;
-	padding-right: 6px;
-	padding-left: 6px;
+  padding: 3px 6px 3px 6px;
 }
 
 #battery.warning,

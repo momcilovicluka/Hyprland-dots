@@ -52,7 +52,6 @@ tooltip label{
 #backlight-slider,
 #battery,
 #bluetooth,
-#cava,
 #clock,
 #cpu,
 #disk,
@@ -80,7 +79,7 @@ tooltip label{
 #custom-menu,
 #custom-power_vertical,
 #custom-power,
-#custom-speaker,
+#custom-swaync,
 #custom-updater,
 #custom-weather,
 #custom-weather.clearNight,
@@ -93,7 +92,7 @@ tooltip label{
 #custom-weather.showyIcyDay,
 #custom-weather.snowyIcyNight,
 #custom-weather.sunnyDay {
-	border-radius: 10px;
+	border-radius: 16px;
   	color: #3A3B3C;
   	border: 1px solid #b4befe;
 	padding-top: 3px;
@@ -138,6 +137,10 @@ tooltip label{
 	background-color: #a6e3a1;
 }
 
+#mpris {
+	background-color: #fab387;
+	color: black;
+}
 #custom-keyboard,
 #keyboard-state,
 #keyboard-state label,
@@ -189,8 +192,8 @@ tooltip label{
 #workspaces button:hover {
     background: #eb6f92;
     color: #f6c177;
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 3px;
+    padding-right: 3px;
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
@@ -204,8 +207,8 @@ tooltip label{
 #taskbar button.active {
   	background-color: #b4befe;
   	color: #3A3B3C;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
     animation: gradient_f 20s ease-in infinite;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
@@ -221,13 +224,14 @@ tooltip label{
 	background-color: #f5c2e7;
 	/*padding: 1px;*/
 	padding-right: 10px;
-	border-radius: 8px;
+	border-radius: 16px;
   	color: #3A3B3C;
   	border: 1px solid #b4befe;
 }
 
 #custom-power {
 	background-color: #f38ba8;
+	padding: 0px 0px 0px 6px;
 }
 
 #custom-updater {
@@ -238,6 +242,7 @@ tooltip label{
 	background-color: #94e2d5;
 }
 
+#custom-swaync,
 #custom-weather {
 	background-color: #cba6f7;
 }

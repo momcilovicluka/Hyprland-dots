@@ -109,7 +109,6 @@ tooltip label{
 #backlight-slider,
 #battery,
 #bluetooth,
-#cava,
 #clock,
 #cpu,
 #disk,
@@ -136,7 +135,7 @@ tooltip label{
 #custom-menu,
 #custom-power_vertical,
 #custom-power,
-#custom-speaker,
+#custom-swaync,
 #custom-updater,
 #custom-weather,
 #custom-weather.clearNight,
@@ -153,9 +152,6 @@ tooltip label{
 	padding-bottom: 3px;
 	padding-right: 6px;
 	padding-left: 6px;
-}
-#custom-power {
-	padding: 1px 3px;
 }
 /*-----Indicators----*/
 #idle_inhibitor.activated {

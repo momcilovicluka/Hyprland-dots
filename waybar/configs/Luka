@@ -27,6 +27,7 @@
 		"custom/pacman",
 		"wlr/taskbar",
 		"mpris",
+		"custom/cava_mviz"
 	],
 
 	// "modules-center": [

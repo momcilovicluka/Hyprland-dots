@@ -347,7 +347,8 @@
 		],
 	},
 	"wlr/taskbar": {
-		"format": "{icon} {name} ",
+		//"format": "{icon} {name} ",
+		"format": "{icon}",
 		"icon-size": 16,
 		"all-outputs": false,
 		"tooltip-format": "{title}",
@@ -356,7 +357,8 @@
 		"ignore-list": [
 			"wofi",
 			"Spotify",
-			"VencordDesktop"
+			"VencordDesktop",
+			"vesktop"
 		]
 	},
 	"custom/cycle_wall": {
@@ -587,5 +589,10 @@
 		"format": " {}",
 		"on-click": "~/.config/hypr/scripts/SwitchKeyboardLayout.sh",
 		"tooltip": false
-	}
+	},
+	"custom/cava_mviz": {
+	    "exec": "~/.config/hypr/scripts/WaybarCava.sh",
+	    "format": "{}"
+	},
+  
 }

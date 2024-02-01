@@ -88,7 +88,6 @@ tooltip label{
 #backlight-slider,
 #battery,
 #bluetooth,
-#cava,
 #clock,
 #cpu,
 #disk,
@@ -107,15 +106,16 @@ tooltip label{
 #wireplumber,
 #workspaces,
 #custom-backlight,
+#custom-cava_mviz,
 #custom-cycle_wall,
 #custom-keybinds,
 #custom-keyboard,
 #custom-light_dark,
 #custom-lock,
 #custom-menu,
-#custom-power_vertical,
 #custom-power,
-#custom-speaker,
+#custom-power_vertical,
+#custom-swaync,
 #custom-updater,
 #custom-weather,
 #custom-weather.clearNight,
@@ -138,6 +138,12 @@ tooltip label{
 	padding-right: 6px;
 	padding-left: 6px;
 }
+
+#custom-power {
+	padding-left: 10px;
+	padding-right: 2px;
+}
+
 /*-----Indicators----*/
 #idle_inhibitor.activated {
 	color: #2dcc36;

@@ -340,8 +340,13 @@ label:focus {
     /*color: #2d3436;*/
 }
 
+#taskbar {
+    margin: 0px;
+}
+
 #taskbar button {
     color: rgb(0, 204, 255);
+    margin: 0px;
 }
 
 #taskbar button.active {
@@ -394,4 +399,8 @@ label:focus {
 
 #custom-notifications {
     color: #4b91fa;
+}
+
+#custom-cava_mviz {
+	color: #00ff00;
 }
