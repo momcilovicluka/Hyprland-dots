@@ -67,7 +67,7 @@ listbox {
     border-radius:              10px;
     border:                     1px;
     border-color:               @active-background;
-	background-color:		    @background;
+	background-color:		    #000000cc;
 }
 /* ---- Dummy ---- */
 dummy {
@@ -82,7 +82,7 @@ inputbar {
     padding:                    8px;
     border-radius:              10px;
     border-color:               @foreground;
-	background-color:			@backrgound90;
+	background-color:			#000000cc;
     children:                   [ "textbox-prompt-colon", "entry" ];
     border:                     1px;
     border-color:               @active-background;
