@@ -1,14 +1,40 @@
 #!/bin/bash
+## /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
+# Clipboard Manager. This script uses cliphist, rofi, and wl-copy.
 
-# WOFI STYLES
-CONFIG="$HOME/.config/wofi/WofiBig/config"
-STYLE="$HOME/.config/wofi/style.css"
-COLORS="$HOME/.config/wofi/colors"
+# Actions:
+# CTRL Del to delete an entry
+# ALT Del to wipe clipboard contents
 
-if [[ ! $(pidof wofi) ]]; then
-  cliphist list | wofi --show dmenu --prompt 'Search...' \
-    --conf ${CONFIG} --style ${STYLE} --color ${COLORS} \
-    --width=600 --height=400 | cliphist decode | wl-copy
-else
-	pkill wofi
-fi
+while true; do
+    result=$(
+        rofi -dmenu \
+            -kb-custom-1 "Control-Delete" \
+            -kb-custom-2 "Alt-Delete" \
+            -config ~/.config/rofi/config-clipboard.rasi < <(cliphist list)
+    )
+
+    case "$?" in
+        1)
+            exit
+            ;;
+        0)
+            case "$result" in
+                "")
+                    continue
+                    ;;
+                *)
+                    cliphist decode <<<"$result" | wl-copy
+                    exit
+                    ;;
+            esac
+            ;;
+        10)
+            cliphist delete <<<"$result"
+            ;;
+        11)
+            cliphist wipe
+            ;;
+    esac
+done
+

@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 # Check for updates
-#yay -Syy
-#pacman -Syy
+# yay -Syy
+# pacman -Syy
 
-aur=`yay -Qu | wc -l`
-ofc=`pacman -Qu | wc -l`
+aur=`yay -Qua | wc -l`
+pac=`pacman -Qu | wc -l`
 
 # Calculate total available updates
 upd=$(( aur + pac ))
@@ -14,7 +14,7 @@ upd=$(( aur + pac ))
 if [ $upd -eq 0 ] ; then
     echo "{\"text\":\"$upd\", \"tooltip\":\" Packages are up to date\"}"
 else
-    echo "{\"text\":\"$upd\", \"tooltip\":\"󱓽 Pacman $ofc\n󱓾 AUR $aur$fpk_disp\"}"
+    echo "{\"text\":\"$upd\", \"tooltip\":\"󱓽 Pacman $pac\n󱓾 AUR $aur$fpk_disp\"}"
 fi
 
 # Trigger upgrade

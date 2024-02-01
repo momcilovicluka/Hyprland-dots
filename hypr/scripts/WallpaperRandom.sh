@@ -28,6 +28,8 @@ while true; do
 		| sort -n | cut -d':' -f2- \
 		| while read -r img; do
 			swww img "$img" && $pywal_script && $pywal_refresh
+			# for cava-pywal (note, need to manually restart cava once wallpaper changes)
+			# ln -sf "$HOME/.cache/wal/cava-colors" "$HOME/.config/cava/config" || true
 			sleep $INTERVAL
 			
 		done
