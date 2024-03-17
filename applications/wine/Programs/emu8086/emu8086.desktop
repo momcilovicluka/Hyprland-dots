@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=emu8086
+Exec=env WINEPREFIX="/home/luka/.wine" wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\emu8086\\\\emu8086.lnk
+Type=Application
+StartupNotify=true
+Path=/home/luka/.wine/dosdevices/c:/emu8086
+Icon=36ED_icon2.0
+StartupWMClass=emu8086.exe

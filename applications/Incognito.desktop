@@ -1,0 +1,8 @@
+[Desktop Entry]
+Categories=
+Exec=google-chrome-stable -incognito
+Hidden=
+Icon=/home/luka/Downloads/candy-icons/apps/scalable/google-chrome2.svg
+Name=Incognito
+NoDisplay=
+Type=Application

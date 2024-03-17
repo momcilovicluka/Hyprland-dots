@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Calendar
+Exec=google-chrome-stable --new-tab https://calendar.google.com/
+Comment=
+Terminal=false
+Icon=/home/luka/Downloads/office-calendar.svg
+Type=Application

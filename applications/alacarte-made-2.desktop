@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Pentaho - Report Desingerica
+Exec=/home/luka/Downloads/report-designer/report-designer.sh
+Comment=
+Terminal=false
+Icon=/home/luka/Downloads/data-integration/spoon.ico
+Type=Application
+Hidden=true

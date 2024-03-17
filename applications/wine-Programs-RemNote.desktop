@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=RemNote
+Exec=env WINEPREFIX="/home/luka/.wine" wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\RemNote.lnk
+Type=Application
+StartupNotify=true
+Comment=RemNote
+Path=/home/luka/.wine/dosdevices/c:/Program Files/RemNote
+Icon=F0B5_RemNote.0
+StartupWMClass=remnote.exe
+Hidden=true

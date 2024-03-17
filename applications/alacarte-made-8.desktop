@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Mail
+Exec=google-chrome-stable --new-tab https://mail.google.com/
+Comment=
+Terminal=false
+Icon=/home/luka/Downloads/gmail.svg
+Type=Application

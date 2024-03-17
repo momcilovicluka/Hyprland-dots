@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=uninstall
+Exec=env WINEPREFIX="/home/luka/.wine" wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\emu8086\\\\uninstall.lnk
+Type=Application
+StartupNotify=true
+Icon=B3C8_unins000.0
+StartupWMClass=unins000.exe

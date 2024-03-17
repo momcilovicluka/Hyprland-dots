@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=documentation
+Exec=env WINEPREFIX="/home/luka/.wine" wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\emu8086\\\\documentation.lnk
+Type=Application
+StartupNotify=true
+StartupWMClass=index.html

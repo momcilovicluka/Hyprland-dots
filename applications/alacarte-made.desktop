@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=SQL Developer
+Exec=/home/luka/Downloads/sqldeveloper/sqldeveloper.sh
+Comment=
+Terminal=false
+Icon=/home/luka/Downloads/sqldeveloper/icon.png
+Type=Application
+NoDisplay=false
+Hidden=true

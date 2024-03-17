@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Neo4j
+Exec=/home/luka/Downloads/neo4j-community-5.15.0/bin/neo4j-admin server console
+Comment=
+Terminal=true
+Icon=/home/luka/Downloads/neo4j-community-5.15.0/png-transparent-graph-database-ibm-gremlin-graph-data-infinitegraph-line-thumbnail.png
+Type=Application
+Hidden=true

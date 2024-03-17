@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=what's new
+Exec=env WINEPREFIX="/home/luka/.wine" wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\emu8086\\\\what\\'s\\ new.lnk
+Type=Application
+StartupNotify=true
+Path=/home/luka/.wine/dosdevices/c:/emu8086
+Icon=43CC_version.0
+StartupWMClass=version.txt

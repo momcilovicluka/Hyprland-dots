@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=emu8086
+MimeType=application/x-wine-extension-com_;
+Exec=env WINEPREFIX="/home/luka/.wine" wine start /ProgIDOpen emu8086 %f
+NoDisplay=true
+StartupNotify=true
+Icon=4869_emu8086.0

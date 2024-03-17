@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Pentaho - Data Integration
+Exec=/home/luka/Downloads/data-integration/spoon.sh
+Comment=
+Terminal=false
+Icon=/home/luka/Downloads/data-integration/spoon.png
+Type=Application
+Hidden=true
