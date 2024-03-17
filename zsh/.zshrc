@@ -3,7 +3,7 @@
 export PATH=/home/sk/.cargo/bin:$PATH
 
 # evals
-eval "$(oh-my-posh init zsh --config /home/luka/git/powershell/luka.omp.json)"
+eval "$(oh-my-posh init zsh --config /home/luka/git/momcilovicluka/powershell/luka.omp.json)"
 #eval "$(thefuck --alias)"
 fuck() {
     eval "$(thefuck --alias)"
