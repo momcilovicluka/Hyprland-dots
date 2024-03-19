@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=YouTube Incognito
+Exec=google-chrome-stable -incognito http://youtube.com/
+Comment=
+Terminal=false
+Icon=/home/luka/Downloads/candy-icons/apps/scalable/youtube.svg
+Type=Application

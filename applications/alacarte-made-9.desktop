@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Twitch
+Exec=google-chrome-stable --new-tab http://twitch.tv/
+Comment=
+Terminal=false
+Icon=/home/luka/Downloads/candy-icons/apps/scalable/twitch.svg
+Type=Application

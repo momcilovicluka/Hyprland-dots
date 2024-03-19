@@ -2,7 +2,9 @@
 Categories=
 Exec=google-chrome-stable --new-tab http://youtube.com/
 Hidden=
-Icon=/home/luka/Downloads/png-clipart-youtube-play-button-computer-icons-youtube-youtube-logo-angle-rectangle-thumbnail.png
+Icon=/home/luka/Downloads/candy-icons/apps/scalable/youtube.svg
 Name=YouTube
 NoDisplay=
 Type=Application
+Comment=
+Terminal=false
