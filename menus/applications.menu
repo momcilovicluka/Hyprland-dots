@@ -1,254 +1,328 @@
-<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
- "http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd">
-
+<?xml version="1.0" ?>
+<!DOCTYPE Menu
+  PUBLIC '-//freedesktop//DTD Menu 1.0//EN'
+  'http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd'>
 <Menu>
-
-  <Name>Applications</Name>
-  <Directory>X-GNOME-Menu-Applications.directory</Directory>
-
-  <!-- Read standard .directory and .desktop file locations -->
-  <DefaultAppDirs/>
-  <DefaultDirectoryDirs/>
-
-  <!-- Read in overrides and child menus from applications-merged/ -->
-  <DefaultMergeDirs/>
-
-  <!-- Accessories submenu -->
-  <Menu>
-    <Name>Accessories</Name>
-    <Directory>Utility.directory</Directory>
-    <Include>
-      <And>
-        <Category>Utility</Category>
-	<!-- Accessibility spec must have either the Utility or Settings
+	<Name>Applications</Name>
+	<Directory>X-GNOME-Menu-Applications.directory</Directory>
+	<!-- Read standard .directory and .desktop file locations -->
+	<DefaultAppDirs/>
+	<DefaultDirectoryDirs/>
+	<!-- Read in overrides and child menus from applications-merged/ -->
+	<DefaultMergeDirs/>
+	<!-- Accessories submenu -->
+	<Menu>
+		<Name>Accessories</Name>
+		<Directory>Utility.directory</Directory>
+		<Include>
+			<And>
+				<Category>Utility</Category>
+				<!-- Accessibility spec must have either the Utility or Settings
              category, and we display an accessibility submenu already for
              the ones that do not have Settings, so don't display accessibility
              applications here -->
-        <Not><Category>Accessibility</Category></Not>
-        <Not><Category>System</Category></Not>
-        <Not><Category>X-GNOME-Utilities</Category></Not>
-      </And>
-    </Include>
-    <Exclude>
-      <!-- Exclude everything we put in the X-GNOME-Utilities whitelist.
+				<Not>
+					<Category>Accessibility</Category>
+				</Not>
+				<Not>
+					<Category>System</Category>
+				</Not>
+				<Not>
+					<Category>X-GNOME-Utilities</Category>
+				</Not>
+			</And>
+		</Include>
+		<Exclude>
+			<!-- Exclude everything we put in the X-GNOME-Utilities whitelist.
 
            Please keep the list alphabetically sorted! -->
-      <Filename>eog.desktop</Filename>
-      <Filename>gucharmap.desktop</Filename>
-      <Filename>org.gnome.Calculator.desktop</Filename>
-      <Filename>org.gnome.DejaDup.desktop</Filename>
-      <Filename>org.gnome.Dictionary.desktop</Filename>
-      <Filename>org.gnome.DiskUtility.desktop</Filename>
-      <Filename>org.gnome.Evince.desktop</Filename>
-      <Filename>org.gnome.FileRoller.desktop</Filename>
-      <Filename>org.gnome.font-viewer.desktop</Filename>
-      <Filename>org.gnome.Screenshot.desktop</Filename>
-      <Filename>org.gnome.seahorse.Application.desktop</Filename>
-      <Filename>org.gnome.Terminal.desktop</Filename>
-      <Filename>org.gnome.tweaks.desktop</Filename>
-      <Filename>org.gnome.Usage.desktop</Filename>
-      <Filename>simple-scan.desktop</Filename>
-      <Filename>vinagre.desktop</Filename>
-      <Filename>yelp.desktop</Filename>
-
-    </Exclude>
-  </Menu> <!-- End Accessories -->
-
-
-  <!-- Accessibility submenu -->
-  <Menu>
-    <Name>Universal Access</Name>
-    <Directory>Utility-Accessibility.directory</Directory>
-    <Include>
-      <And>
-        <Category>Accessibility</Category>
-        <Not><Category>Settings</Category></Not>
-      </And>
-    </Include>
-  </Menu> <!-- End Accessibility -->
-
-  <!-- Development Tools -->
-  <Menu>
-    <Name>Development</Name>
-    <Directory>Development.directory</Directory>
-    <Include>
-      <And>
-        <Category>Development</Category>
-      </And>
-      <Filename>emacs.desktop</Filename>
-    </Include>
-  </Menu> <!-- End Development Tools -->
-
-  <!-- Education -->
-  <Menu>
-    <Name>Education</Name>
-    <Directory>Education.directory</Directory>
-    <Include>
-      <And>
-        <Category>Education</Category>
-      </And>
-    </Include>
-  </Menu> <!-- End Education -->
-
-  <!-- Games -->
-  <Menu>
-    <Name>Games</Name>
-    <Directory>Game.directory</Directory>
-    <Include>
-      <And>
-        <Category>Game</Category>
-      </And>
-    </Include>
-  </Menu> <!-- End Games -->
-
-  <!-- Graphics -->
-  <Menu>
-    <Name>Graphics</Name>
-    <Directory>Graphics.directory</Directory>
-    <Include>
-      <And>
-        <Category>Graphics</Category>
-        <Not><Filename>eog.desktop</Filename></Not>
-        <Not><Filename>org.gnome.Evince.desktop</Filename></Not>
-        <Not><Filename>simple-scan.desktop</Filename></Not>
-      </And>
-    </Include>
-  </Menu> <!-- End Graphics -->
-
-  <!-- Internet -->
-  <Menu>
-    <Name>Internet</Name>
-    <Directory>Network.directory</Directory>
-    <Include>
-      <And>
-        <Category>Network</Category>
-	<Not><Category>X-GNOME-WebApplication</Category></Not>
-      </And>
-    </Include>
-
-    <Exclude>
-      <!-- Utilities exclusions -->
-      <Filename>vinagre.desktop</Filename>
-    </Exclude>
-  </Menu>   <!-- End Internet -->
-
-  <!-- FIXME: BROKEN: Web Applications -->
-  <Menu>
-    <Name>Web Applications</Name>
-    <Directory>X-GNOME-WebApplications.directory</Directory>
-    <Include>
-      <And>
-	<Category>Network</Category>
-	<Category>X-GNOME-WebApplication</Category>
-      </And>
-    </Include>
-  </Menu>
-
-  <!-- Multimedia -->
-  <Menu>
-    <Name>Multimedia</Name>
-    <Directory>AudioVideo.directory</Directory>
-    <Include>
-      <And>
-        <Category>AudioVideo</Category>
-      </And>
-    </Include>
-  </Menu>   <!-- End Multimedia -->
-
-  <!-- Office -->
-  <Menu>
-    <Name>Office</Name>
-    <Directory>Office.directory</Directory>
-    <Include>
-      <And>
-        <Category>Office</Category>
-        <Not><Filename>org.gnome.Dictionary.desktop</Filename></Not>
-        <Not><Filename>org.gnome.Evince.desktop</Filename></Not>
-      </And>
-    </Include>
-  </Menu> <!-- End Office -->
-
-  <!-- System Tools-->
-  <Menu>
-    <Name>System</Name>
-    <Directory>System-Tools.directory</Directory>
-    <Include>
-      <And>
-        <Category>System</Category>
-        <Not><Category>Settings</Category></Not>
-        <Not><Category>X-GNOME-Utilities</Category></Not>
-      </And>
-    </Include>
-
-    <Exclude>
-      <!-- Utilities exclusions -->
-      <Filename>gnome-abrt.desktop</Filename>
-      <Filename>gnome-system-log.desktop</Filename>
-      <Filename>gnome-system-monitor.desktop</Filename>
-      <Filename>org.gnome.baobab.desktop</Filename>
-      <Filename>org.gnome.Terminal.desktop</Filename>
-      <Filename>org.gnome.Usage.desktop</Filename>
-    </Exclude>
-  </Menu>   <!-- End System Tools -->
-
-  <!-- System Settings -->
-  <Menu>
-    <Name>System Settings</Name>
-    <Directory>X-GNOME-SystemSettings.directory</Directory>
-    <Include>
-      <Category>X-GNOME-Settings-Panel</Category>
-    </Include>
-  </Menu>
-
-  <!-- Utilities submenu -->
-  <Menu>
-    <Name>Utilities</Name>
-    <Directory>X-GNOME-Utilities.directory</Directory>
-    <Include>
-      <Category>X-GNOME-Utilities</Category>
-      <Filename>eog.desktop</Filename>
-      <Filename>gnome-abrt.desktop</Filename>
-      <Filename>gnome-system-log.desktop</Filename>
-      <Filename>gnome-system-monitor.desktop</Filename>
-      <Filename>gucharmap.desktop</Filename>
-      <Filename>nm-connection-editor.desktop</Filename>
-      <Filename>org.gnome.baobab.desktop</Filename>
-      <Filename>org.gnome.Calculator.desktop</Filename>
-      <Filename>org.gnome.DejaDup.desktop</Filename>
-      <Filename>org.gnome.Dictionary.desktop</Filename>
-      <Filename>org.gnome.DiskUtility.desktop</Filename>
-      <Filename>org.gnome.Evince.desktop</Filename>
-      <Filename>org.gnome.FileRoller.desktop</Filename>
-      <Filename>org.gnome.fonts.desktop</Filename>
-      <Filename>org.gnome.Screenshot.desktop</Filename>
-      <Filename>org.gnome.seahorse.Application.desktop</Filename>
-      <Filename>org.gnome.Terminal.desktop</Filename>
-      <Filename>org.gnome.tweaks.desktop</Filename>
-      <Filename>org.gnome.Usage.desktop</Filename>
-      <Filename>simple-scan.desktop</Filename>
-      <Filename>vinagre.desktop</Filename>
-      <Filename>yelp.desktop</Filename>
-    </Include>
-  </Menu>
-
-  <!-- Other -->
-  <Menu>
-    <Name>Other</Name>
-    <Directory>X-GNOME-Other.directory</Directory>
-    <OnlyUnallocated/>
-    <Include>
-      <And>
-        <Not><Category>Core</Category></Not>
-        <Not><Category>Screensaver</Category></Not>
-
-      </And>
-    </Include>
-  </Menu> <!-- End Other -->
-
-   <Layout>
-     <Merge type="menus" />
-     <Menuname>Other</Menuname>
-     <Merge type="files" />
-   </Layout>
-
-</Menu> <!-- End Applications -->
+			<Filename>eog.desktop</Filename>
+			<Filename>gucharmap.desktop</Filename>
+			<Filename>org.gnome.Calculator.desktop</Filename>
+			<Filename>org.gnome.DejaDup.desktop</Filename>
+			<Filename>org.gnome.Dictionary.desktop</Filename>
+			<Filename>org.gnome.DiskUtility.desktop</Filename>
+			<Filename>org.gnome.Evince.desktop</Filename>
+			<Filename>org.gnome.FileRoller.desktop</Filename>
+			<Filename>org.gnome.font-viewer.desktop</Filename>
+			<Filename>org.gnome.Screenshot.desktop</Filename>
+			<Filename>org.gnome.seahorse.Application.desktop</Filename>
+			<Filename>org.gnome.Terminal.desktop</Filename>
+			<Filename>org.gnome.tweaks.desktop</Filename>
+			<Filename>org.gnome.Usage.desktop</Filename>
+			<Filename>simple-scan.desktop</Filename>
+			<Filename>vinagre.desktop</Filename>
+			<Filename>yelp.desktop</Filename>
+		</Exclude>
+	</Menu>
+	<!-- End Accessories -->
+	<!-- Accessibility submenu -->
+	<Menu>
+		<Name>Universal Access</Name>
+		<Directory>Utility-Accessibility.directory</Directory>
+		<Include>
+			<And>
+				<Category>Accessibility</Category>
+				<Not>
+					<Category>Settings</Category>
+				</Not>
+			</And>
+		</Include>
+	</Menu>
+	<!-- End Accessibility -->
+	<!-- Development Tools -->
+	<Menu>
+		<Name>Development</Name>
+		<Directory>Development.directory</Directory>
+		<Include>
+			<And>
+				<Category>Development</Category>
+			</And>
+			<Filename>emacs.desktop</Filename>
+		</Include>
+	</Menu>
+	<!-- End Development Tools -->
+	<!-- Education -->
+	<Menu>
+		<Name>Education</Name>
+		<Directory>Education.directory</Directory>
+		<Include>
+			<And>
+				<Category>Education</Category>
+			</And>
+		</Include>
+	</Menu>
+	<!-- End Education -->
+	<!-- Games -->
+	<Menu>
+		<Name>Games</Name>
+		<Directory>Game.directory</Directory>
+		<Include>
+			<And>
+				<Category>Game</Category>
+			</And>
+		</Include>
+	</Menu>
+	<!-- End Games -->
+	<!-- Graphics -->
+	<Menu>
+		<Name>Graphics</Name>
+		<Directory>Graphics.directory</Directory>
+		<Include>
+			<And>
+				<Category>Graphics</Category>
+				<Not>
+					<Filename>eog.desktop</Filename>
+				</Not>
+				<Not>
+					<Filename>org.gnome.Evince.desktop</Filename>
+				</Not>
+				<Not>
+					<Filename>simple-scan.desktop</Filename>
+				</Not>
+			</And>
+		</Include>
+	</Menu>
+	<!-- End Graphics -->
+	<!-- Internet -->
+	<Menu>
+		<Name>Internet</Name>
+		<Directory>Network.directory</Directory>
+		<Include>
+			<And>
+				<Category>Network</Category>
+				<Not>
+					<Category>X-GNOME-WebApplication</Category>
+				</Not>
+			</And>
+		</Include>
+		<Exclude>
+			<!-- Utilities exclusions -->
+			<Filename>vinagre.desktop</Filename>
+		</Exclude>
+	</Menu>
+	<!-- End Internet -->
+	<!-- FIXME: BROKEN: Web Applications -->
+	<Menu>
+		<Name>Web Applications</Name>
+		<Directory>X-GNOME-WebApplications.directory</Directory>
+		<Include>
+			<And>
+				<Category>Network</Category>
+				<Category>X-GNOME-WebApplication</Category>
+			</And>
+		</Include>
+	</Menu>
+	<!-- Multimedia -->
+	<Menu>
+		<Name>Multimedia</Name>
+		<Directory>AudioVideo.directory</Directory>
+		<Include>
+			<And>
+				<Category>AudioVideo</Category>
+			</And>
+		</Include>
+	</Menu>
+	<!-- End Multimedia -->
+	<!-- Office -->
+	<Menu>
+		<Name>Office</Name>
+		<Directory>Office.directory</Directory>
+		<Include>
+			<And>
+				<Category>Office</Category>
+				<Not>
+					<Filename>org.gnome.Dictionary.desktop</Filename>
+				</Not>
+				<Not>
+					<Filename>org.gnome.Evince.desktop</Filename>
+				</Not>
+			</And>
+		</Include>
+	</Menu>
+	<!-- End Office -->
+	<!-- System Tools-->
+	<Menu>
+		<Name>System</Name>
+		<Directory>System-Tools.directory</Directory>
+		<Include>
+			<And>
+				<Category>System</Category>
+				<Not>
+					<Category>Settings</Category>
+				</Not>
+				<Not>
+					<Category>X-GNOME-Utilities</Category>
+				</Not>
+			</And>
+		</Include>
+		<Exclude>
+			<!-- Utilities exclusions -->
+			<Filename>gnome-abrt.desktop</Filename>
+			<Filename>gnome-system-log.desktop</Filename>
+			<Filename>gnome-system-monitor.desktop</Filename>
+			<Filename>org.gnome.baobab.desktop</Filename>
+			<Filename>org.gnome.Terminal.desktop</Filename>
+			<Filename>org.gnome.Usage.desktop</Filename>
+		</Exclude>
+	</Menu>
+	<!-- End System Tools -->
+	<!-- System Settings -->
+	<Menu>
+		<Name>System Settings</Name>
+		<Directory>X-GNOME-SystemSettings.directory</Directory>
+		<Include>
+			<Category>X-GNOME-Settings-Panel</Category>
+		</Include>
+	</Menu>
+	<!-- Utilities submenu -->
+	<Menu>
+		<Name>Utilities</Name>
+		<Directory>X-GNOME-Utilities.directory</Directory>
+		<Include>
+			<Category>X-GNOME-Utilities</Category>
+			<Filename>eog.desktop</Filename>
+			<Filename>gnome-abrt.desktop</Filename>
+			<Filename>gnome-system-log.desktop</Filename>
+			<Filename>gnome-system-monitor.desktop</Filename>
+			<Filename>gucharmap.desktop</Filename>
+			<Filename>nm-connection-editor.desktop</Filename>
+			<Filename>org.gnome.baobab.desktop</Filename>
+			<Filename>org.gnome.Calculator.desktop</Filename>
+			<Filename>org.gnome.DejaDup.desktop</Filename>
+			<Filename>org.gnome.Dictionary.desktop</Filename>
+			<Filename>org.gnome.DiskUtility.desktop</Filename>
+			<Filename>org.gnome.Evince.desktop</Filename>
+			<Filename>org.gnome.FileRoller.desktop</Filename>
+			<Filename>org.gnome.fonts.desktop</Filename>
+			<Filename>org.gnome.Screenshot.desktop</Filename>
+			<Filename>org.gnome.seahorse.Application.desktop</Filename>
+			<Filename>org.gnome.Terminal.desktop</Filename>
+			<Filename>org.gnome.tweaks.desktop</Filename>
+			<Filename>org.gnome.Usage.desktop</Filename>
+			<Filename>simple-scan.desktop</Filename>
+			<Filename>vinagre.desktop</Filename>
+			<Filename>yelp.desktop</Filename>
+		</Include>
+	</Menu>
+	<!-- Other -->
+	<Menu>
+		<Name>Other</Name>
+		<Directory>X-GNOME-Other.directory</Directory>
+		<OnlyUnallocated/>
+		<Include>
+			<And>
+				<Not>
+					<Category>Core</Category>
+				</Not>
+				<Not>
+					<Category>Screensaver</Category>
+				</Not>
+			</And>
+		</Include>
+		<Include>
+			<Filename>alacarte-made-9.desktop</Filename>
+		</Include>
+		<Include>
+			<Filename>alacarte-made-10.desktop</Filename>
+		</Include>
+		<Layout>
+			<Merge type="menus"/>
+			<Filename>gcr-prompter.desktop</Filename>
+			<Filename>blueman-manager.desktop</Filename>
+			<Filename>alacarte-made-7.desktop</Filename>
+			<Filename>org.rnd2.cpupower_gui.desktop</Filename>
+			<Filename>_usr_lib_eclipse_.desktop</Filename>
+			<Filename>wine-extension-com_.desktop</Filename>
+			<Filename>wine-extension-bin_.desktop</Filename>
+			<Filename>wine-extension-exe_.desktop</Filename>
+			<Filename>thunar-settings.desktop</Filename>
+			<Filename>geoclue-demo-agent.desktop</Filename>
+			<Filename>google-maps-geo-handler.desktop</Filename>
+			<Filename>io.elementary.granite.demo.desktop</Filename>
+			<Filename>grub-customizer.desktop</Filename>
+			<Filename>nwg-look.desktop</Filename>
+			<Filename>wine-extension-chm.desktop</Filename>
+			<Filename>Incognito.desktop</Filename>
+			<Filename>org.kde.kwalletd6.desktop</Filename>
+			<Filename>ktelnetservice6.desktop</Filename>
+			<Filename>logisim-evolution.desktop</Filename>
+			<Filename>alacarte-made-8.desktop</Filename>
+			<Filename>nm-applet.desktop</Filename>
+			<Filename>nvidia-settings.desktop</Filename>
+			<Filename>java-java11-openjdk.desktop</Filename>
+			<Filename>java-java-openjdk.desktop</Filename>
+			<Filename>openstreetmap-geo-handler.desktop</Filename>
+			<Filename>qt5ct.desktop</Filename>
+			<Filename>qt6ct.desktop</Filename>
+			<Filename>qwant-maps-geo-handler.desktop</Filename>
+			<Filename>alacarte-made-5.desktop</Filename>
+			<Filename>thunar-volman-settings.desktop</Filename>
+			<Filename>rofi.desktop</Filename>
+			<Filename>rofi-theme-selector.desktop</Filename>
+			<Filename>sddm-config-editor.desktop</Filename>
+			<Filename>org.xfce.mousepad-settings.desktop</Filename>
+			<Filename>tlpui.desktop</Filename>
+			<Filename>kcm_trash.desktop</Filename>
+			<Filename>gcr-viewer.desktop</Filename>
+			<Filename>kcm_webshortcuts.desktop</Filename>
+			<Filename>wheelmap-geo-handler.desktop</Filename>
+			<Filename>geoclue-where-am-i.desktop</Filename>
+			<Filename>wine-extension-msp.desktop</Filename>
+			<Filename>wine.desktop</Filename>
+			<Filename>wine-extension-hlp.desktop</Filename>
+			<Filename>wine-extension-vbs.desktop</Filename>
+			<Filename>YouTube.desktop</Filename>
+			<Filename>org.gnome.Zenity.desktop</Filename>
+			<Filename>alacarte-made-9.desktop</Filename>
+			<Merge type="files"/>
+		</Layout>
+	</Menu>
+	<!-- End Other -->
+	<Layout>
+		<Merge type="menus"/>
+		<Menuname>Other</Menuname>
+		<Merge type="files"/>
+	</Layout>
+</Menu>
+<!-- End Applications -->
