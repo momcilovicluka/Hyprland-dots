@@ -12,7 +12,12 @@ return {
     -- register harpoon list append to leader a
     wk.register({
       ["<leader>"] = {
-        a = { function() harpoon:list():append() end, "Append to Harpoon list" },
+        a = {
+          function()
+            harpoon:list():append()
+          end,
+          "Append to Harpoon list",
+        },
       },
     })
 
