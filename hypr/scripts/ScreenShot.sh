@@ -55,8 +55,8 @@ shotwin() {
 }
 
 shotarea() {
-	cd ${dir} && grim -g "$(slurp)" - | tee "$file" | wl-copy
-	notify_view
+    local selection="$(slurp)"
+    [ -n "$selection" ] && cd "${dir}" && grim -g "$selection" - | tee "$file" | wl-copy && notify_view
 }
 
 if [[ ! -d "$dir" ]]; then
