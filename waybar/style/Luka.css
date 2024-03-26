@@ -213,8 +213,8 @@ tooltip label {
 }
 
 #battery.charging {
-    color: #ffffff;
-    background-color: #26A65B;
+    color: #9900ff;
+    /* background-color: #26A65B; */
 }
 
 @keyframes blink {

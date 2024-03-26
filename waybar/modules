@@ -335,17 +335,31 @@
 	},
 	"wireplumber": {
 		"format": "{icon} {volume}%",
+		"format-bluetooth": "{icon}  {volume}%",
 		"format-muted": " Mute",
 		"on-click": "~/.config/hypr/scripts/Volume.sh --toggle",
 		"on-click-right": "pavucontrol -t 3",
 		"on-scroll-up": "~/.config/hypr/scripts/Volume.sh --inc",
 		"on-scroll-down": "~/.config/hypr/scripts/Volume.sh --dec",
-		"format-icons": [
-			"",
-			"",
-			"󰕾",
-			""
-		],
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": [
+				"",
+				"",
+				"󰕾",
+				""
+			],
+			"ignored-sinks": [
+				"Easy Effects Sink"
+			],
+		},
+		"smooth-scrolling-threshold": 1,
+		"scroll-step": 5.0,
 	},
 	"wlr/taskbar": {
 		//"format": "{icon} {name} ",
