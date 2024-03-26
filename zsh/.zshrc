@@ -16,6 +16,8 @@ export FZF_DEFAULT_COMMAND='find .'
 
 export ZSH="$HOME/.config/zsh/oh-my-zsh"
 
+export SUDO_EDITOR=/usr/bin/nvim
+
 ZSH_THEME="mikeh"
 
 plugins=( 
