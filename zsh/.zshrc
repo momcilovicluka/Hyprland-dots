@@ -91,3 +91,15 @@ alias all='exa -alF --icons --color=always --group-directories-first'
 alias ala='exa -a --icons --color=always --group-directories-first'
 alias al='exa -F --icons --color=always --group-directories-first'
 alias al.='exa -a | egrep "^\."'
+
+jpgs2pngs() {
+    for file in *.jpg; do
+        convert "$file" "${file%.jpg}.png"
+    done
+}
+
+fixpngs() {
+    for file in *.png; do
+        convert "$file" "${file%.png}.png"
+    done
+}
