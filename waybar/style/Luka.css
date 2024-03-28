@@ -137,6 +137,7 @@ tooltip label {
 #window,
 #wireplumber,
 #workspaces,
+#custom-agenda,
 #custom-cycle_wall,
 #custom-light_dark,
 #custom-lock,
@@ -404,3 +405,11 @@ label:focus {
 #custom-cava_mviz {
 	color: #00ff00;
 }
+
+#custom-agenda {
+    color: #a866ff;
+}
+
+#custom-agenda.soon {
+    color: #eb4d4b;
+  }
