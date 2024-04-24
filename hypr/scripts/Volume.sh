@@ -31,12 +31,12 @@ notify_user() {
 
 # Increase Volume
 inc_volume() {
-	pamixer -i 5 && notify_user
+	pamixer -i 5 --allow-boost --set-limit 150 && notify_user
 }
 
 # Decrease Volume
 dec_volume() {
-	pamixer -d 5 && notify_user
+	pamixer -d 5 --allow-boost --set-limit 150 && notify_user
 }
 
 # Toggle Mute
