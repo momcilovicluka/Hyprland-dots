@@ -373,7 +373,8 @@
 			"wofi",
 			"Spotify",
 			"VencordDesktop",
-			"vesktop"
+			"vesktop",
+			"discord"
 		]
 	},
 	"custom/cycle_wall": {
