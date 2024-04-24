@@ -30,7 +30,7 @@ while true; do
 		| sort -n | cut -d':' -f2- \
 		| while read -r img; do
 			pkill swaybg
-  			#swww query || swww init
+  			swww query || swww-daemon&
 			swww img "$img" --transition-type any
 			wal -i $img -n
 			pywalfox update
