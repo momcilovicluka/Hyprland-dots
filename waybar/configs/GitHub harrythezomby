@@ -1,0 +1,327 @@
+[
+    {
+        "layer": "top", // Waybar at top layer
+        "output": ["DP-2", "DP-4"],
+        "position": "left", // Waybar position (top|bottom|left|right)
+        "height": 1080, // Waybar height (to be removed for auto height)
+        "width": 5, // Waybar width
+        "spacing": 8, // Gaps between modules (4px)
+        // Choose the order of the modules
+        "modules-left": ["custom/apps", "custom/files", "group/group-vm", "custom/pmenu", "hyprland/workspaces", "cpu#graph", "wlr/taskbar"],
+        "modules-center": ["clock"],
+        "modules-right": ["tray", "cpu#percent", "memory",  "temperature",  "pulseaudio", "network", "backlight", "battery"],
+        //Modules configuration
+
+        "custom/pmenu": {
+            "format": " ",
+            "on-click": "sleep 0.1 && rofi -show p -modi p:rofi-power-menu"
+        },
+
+        "custom/apps": {
+            "format": "󰣇 ",
+            "on-click": "sleep 0.1 && rofi -show drun -show-icons"
+        },
+
+        "custom/VM": {
+            "format": " ",
+            "on-click": "virt-viewer -c qemu:///system"
+        },
+
+        "custom/files": {
+            "format": " ",
+            "on-click": "rofi -show filebrowser"
+        },
+
+        "hyprland/workspaces": {
+            "all-outputs": true,
+            "format": "{name}",
+                "on-scroll-up": "hyprctl dispatch workspace e+1",
+                "on-scroll-down": "hyprctl dispatch workspace e-1",
+                "on-click": "activate"
+            
+            },
+
+        "hyprland/window": {
+            "format": "{}",
+            "max-length": 140,
+            "separate-outputs": false
+        },
+
+        "tray": {
+            "icon-size": 18,
+            "spacing": 2
+        },
+        "clock": {
+            "format": "{:%I\n<span overline=\"single\">%M</span>}",
+            "timezone": "Australia/Melbourne",
+            "tooltip-format": "<tt><small>{calendar}</small></tt>",
+            "calendar": {
+                        "mode"          : "month",
+
+                        "mode-mon-col"  : 3,
+                        "weeks-pos"     : "right",
+                        "on-scroll"     : 1,
+                        "on-click-right": "mode",
+                        "format": {
+                                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                                }
+                        },
+            "actions":  {
+                        "on-click-right": "mode",
+                        "on-click-forward": "tz_up",
+                        "on-click-backward": "tz_down",
+                        "on-scroll-up": "shift_up",
+                        "on-scroll-down": "shift_down"
+                        }
+        },
+
+        "temperature": {
+            "thermal-zone": 2,
+            "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+            "critical-threshold": 80,
+            "format": "{icon}\n{temperatureC}°C",
+            "format-icons": [" 󰼩 ", " 󱩱 ", " 󰼷 "]
+        },
+        "backlight": {
+            "device": "acpi_video1",
+            "format": "{icon} {percent}%",
+            "format-icons": ["", "", "", "", "", "", "", "", ""]
+        },
+
+        "battery": {
+            "interval": 60,
+            "states": {
+                "warning": 20,
+                "critical": 8
+            },
+            "format": "{icon} {capacity}%",
+            "format-charging": " {capacity}%",
+            "format-plugged": "  {capacity}%",
+            "format-alt": "{icon} {time}",
+            "format-icons": ["", "", "", "", ""],
+            "max-length": 25
+        },
+
+        "network": {
+            // "interface": "wlp2*", // (Optional) To force the use of this interface
+            "interval": 60,
+            "format-wifi": " ",
+            "tooltip-format": "  {ifname} on {essid} via {gwaddr}",
+            "format-linked": "{ifname} (No IP)",
+            "format-disconnected": "  None",
+            "min-length": 1,
+        },
+
+        "pulseaudio": {
+            "scroll-step": 1, // %, can be a float
+	        "on-click": "exec pavucontrol",
+            "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+            "ignored-sinks": ["Easy Effects Sink"],
+            "format": "{icon}\n{volume}%",
+            "format-bluetooth": "󰥰\n{volume}%",
+            "format-muted": "󰖁",
+            "format-icons": {
+                "headphone": "",
+                "hands-free": "",
+                "headset": "",
+                "phone": "",
+                "portable": "",
+                "car": "",
+                "default": [" 󰕿", " 󰖀", " 󰕾"]
+            }
+
+        },
+
+        "wlr/taskbar": {
+            "all-outputs": true,
+                "sort-by-app-id": true,
+                "format": "{icon}",
+                "icon-size": 16,
+                //"icon-theme": "Numix-Circle",
+                "tooltip-format": "{title}",
+                "on-click": "activate",
+                "on-click-right": "fullscreen",
+                "on-click-middle": "close"
+            },
+    
+            "cpu#graph": {
+                "interval": 1,
+                "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
+                "min-length": 0,
+                "rotate": 270,
+                "format-icons": [
+                     "<span color='#a6e3a1'>▁</span>", // green
+                     "<span color='#74c7ec'>▂</span>", // blue
+                     "<span color='#f5c2e7'>▃</span>", // white
+                     "<span color='#f5c2e7'>▄</span>", // white
+                     "<span color='#f9e2af'>▅</span>", // yellow
+                     "<span color='#f9e2af'>▆</span>", // yellow
+                     "<span color='#fab387'>▇</span>", // orange
+                     "<span color='#f38ba8'>█</span>"  // red
+                ]
+           },
+
+           "cpu#percent": {
+            "interval": 1,
+            "format": "     \n {avg_frequency:3}\n {usage:2}%"
+        },
+
+           "memory": {
+            "interval": 2,
+                "format": "  󰘚\n {percentage}%\n {used:2}\n{total:02}"
+        },
+
+        "group/group-power": {
+            "orientation": "inherit",
+            "drawer": {
+                "transition-duration": 500,
+                "children-class": "not-power",
+                "transition-left-to-right": false,
+            },
+            "modules": [
+                "custom/power", // First element is the "group leader" and won't ever be hidden
+                "custom/quit",
+                "custom/lock",
+                "custom/reboot",
+            ]
+        },
+        "custom/quit": {
+            "format": "󰗼 ",
+            "tooltip": false,
+            "on-click": "hyprctl dispatch exit"
+        },
+        "custom/lock": {
+            "format": "󰍁 ",
+            "tooltip": false,
+            "on-click": "swaylock"
+        },
+        "custom/reboot": {
+            "format": "󰜉 ",
+            "tooltip": false,
+            "on-click": "reboot"
+        },
+        "custom/power": {
+            "format": "󰐥 ",
+            "tooltip": false,
+            "on-click": "shutdown now"
+        },
+
+        "group/group-vm": {
+            "orientation": "inherit",
+            "drawer": {
+                "transition-duration": 500,
+                "children-class": "not-vm",
+                "transition-left-to-right": false,
+            },
+            "modules": [
+                "custom/virtmanager", // First element is the "group leader" and won't ever be hidden
+                "custom/startvm",
+                "custom/lookingglass",
+                "custom/viewvm",
+                "custom/shutdownvm"
+            ]
+        },
+        "custom/startvm": {
+            "format": " ",
+            "tooltip": false,
+            "on-click": "virsh --connect qemu:///system start 'win11'"
+        },
+        "custom/viewvm": {
+            "format": " ",
+            "tooltip": false,
+            "on-click": "virt-viewer -c qemu:///system 'win11'"
+        },
+        "custom/lookingglass": {
+            "format": "󱇽 ",
+            "tooltip": false,
+            "on-click": "looking-glass-client"
+        },
+        "custom/virtmanager": {
+            "format": " ",
+            "tooltip": false,
+            "on-click": "virt-manager"
+        },
+        "custom/shutdownvm": {
+            "format": " ",
+            "tooltip": false,
+            "on-click": "virt --connect qemu:///system shutdown 'win11'"
+        }
+
+    },
+    
+    {
+        "layer": "top", // Waybar at top layer
+        "output": "DP-3",
+        "position": "bottom", // Waybar position (top|bottom|left|right)
+        "height": 10, // Waybar height (to be removed for auto height)
+        "width": 1080, // Waybar width
+        "spacing": 8, // Gaps between modules (4px)
+        // Choose the order of the modules
+        "modules-left": ["custom/apps","hyprland/workspaces" ],
+        "modules-center": ["wlr/taskbar#sides"],
+        "modules-right": ["clock"],
+        //Modules configuration
+
+        "clock": {
+            "format": "  {:%I:%M %p}",
+            "timezone": "Australia/Melbourne",
+            "format-alt": "  {:%A, %B %d, %Y (%R)}",
+            "tooltip-format": "<tt><small>{calendar}</small></tt>",
+            "calendar": {
+                        "mode"          : "month",
+
+                        "mode-mon-col"  : 3,
+                        "weeks-pos"     : "right",
+                        "on-scroll"     : 1,
+                        "on-click-right": "mode",
+                        "format": {
+                                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                                }
+                        },
+            "actions":  {
+                        "on-click-right": "mode",
+                        "on-click-forward": "tz_up",
+                        "on-click-backward": "tz_down",
+                        "on-scroll-up": "shift_up",
+                        "on-scroll-down": "shift_down"
+                        }
+        },
+
+
+        "custom/apps": {
+            "format": " 󰣇",
+            "on-click": "sleep 0.1 && rofi -show drun"
+        },
+
+        "hyprland/workspaces": {
+            "all-outputs": true,
+            "format": "{name}",
+                "on-scroll-up": "hyprctl dispatch workspace e+1",
+                "on-scroll-down": "hyprctl dispatch workspace e-1",
+                "on-click": "activate"
+            
+            },
+
+        "wlr/taskbar#sides": {
+            "all-outputs": false,
+                "sort-by-app-id": true,
+                "format": "{icon} {name}",
+                "icon-size": 30,
+                //"icon-theme": "Numix-Circle",
+                "tooltip-format": "{title}",
+                "on-click": "activate",
+                "on-click-right": "fullscreen",
+                "on-click-middle": "close"
+            }
+        
+    }
+
+]
