@@ -80,10 +80,11 @@ tooltip label {
 }
 
 #workspaces button.active {
-    padding: 0 0 0 0;
+    padding: 0 3 0 3;
     margin: 0 0 0 0;
-    background-color: transparent;
+    background-color: blue;
     color: #00eeff;
+    border-radius: 8px
     /*min-width: 36px;*/
     /* Use box-shadow instead of border so the text isn't offset */
     /*    box-shadow: inset 0 -3px transparent;*/
