@@ -2,26 +2,33 @@
 
 # Polkit possible paths files to check
 polkit=(
-  "/usr/lib/polkit-kde-authentication-agent-1"
-  "/usr/lib/polkit-gnome-authentication-agent-1"
-  "/usr/libexec/polkit-gnome-authentication-agent-1"
-  "/usr/lib/x86_64-linux-gnu/libexec/polkit-kde-authentication-agent-1"
-  "/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1"
+	"/usr/lib/polkit-kde-authentication-agent-1"
+	"/usr/lib/polkit-gnome-authentication-agent-1"
+	"/usr/libexec/polkit-gnome-authentication-agent-1"
+	"/usr/lib/x86_64-linux-gnu/libexec/polkit-kde-authentication-agent-1"
+	"/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1"
+	"/usr/bin/lxqt-policykit-agent"
+	"/usr/bin/lxpolkit"
+	"/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
+	"/usr/bin/polkit-efl-authentication-agent-1"
+	"/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+	"/usr/lib/ts-polkitagent"
+	"/usr/lib/xfce-polkit/xfce-polkit"
 )
 
-executed=false  # Flag to track if a file has been executed
+executed=false # Flag to track if a file has been executed
 
 # Loop through the list of files
 for file in "${polkit[@]}"; do
-  if [ -e "$file" ]; then
-    echo "File $file found, executing command..."
-    exec "$file"  
-    executed=true
-    break
-  fi
+	if [ -e "$file" ]; then
+		echo "File $file found, executing command..."
+		exec "$file"
+		executed=true
+		break
+	fi
 done
 
 # If none of the files were found, you can add a fallback command here
 if [ "$executed" == false ]; then
-  echo "None of the specified files were found. Install a Polkit"
+	echo "None of the specified files were found. Install a Polkit"
 fi
