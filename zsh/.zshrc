@@ -78,6 +78,11 @@ alias neovim=nvim
 alias icat='kitten icat'
 alias cat=bat
 
+alias fucking='sudo'
+alias uwu='sudo !!'
+alias please='sudo !!'
+alias bruh='sudo !!'
+
 alias lg=lazygit
 alias gf='git fetch'
 alias gp='git pull'
