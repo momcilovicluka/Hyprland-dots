@@ -39,22 +39,6 @@ znap source marlonrichert/zsh-autocomplete
 
 zstyle ':autocomplete:history-search-backward:*' list-lines 1024
 
-bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
-bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
-bindkey '^l' autosuggest-accept
-source $ZSH/oh-my-zsh.sh
-() {
-   local -a prefix=( '\e'{\[,O} )
-   local -a up=( ${^prefix}A ) down=( ${^prefix}B )
-   local key=
-   for key in $up[@]; do
-      bindkey "$key" up-line-or-history
-   done
-   for key in $down[@]; do
-      bindkey "$key" down-line-or-history
-   done
-}
-
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=$HISTSIZE
@@ -79,9 +63,9 @@ alias icat='kitten icat'
 alias cat=bat
 
 alias fucking='sudo'
-alias uwu='sudo !!'
-alias please='sudo !!'
-alias bruh='sudo !!'
+alias uwu='sudo'
+alias please='sudo'
+alias bruh='sudo'
 
 alias lg=lazygit
 alias gf='git fetch'
@@ -97,6 +81,22 @@ alias ala='exa -a --icons --color=always --group-directories-first'
 alias al='exa -F --icons --color=always --group-directories-first'
 alias al.='exa -a | egrep "^\."'
 
+bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
+bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
+bindkey '^l' autosuggest-accept
+source $ZSH/oh-my-zsh.sh
+() {
+   local -a prefix=( '\e'{\[,O} )
+   local -a up=( ${^prefix}A ) down=( ${^prefix}B )
+   local key=
+   for key in $up[@]; do
+      bindkey "$key" up-line-or-history
+   done
+   for key in $down[@]; do
+      bindkey "$key" down-line-or-history
+   done
+}
+
 jpgs2pngs() {
     for file in *.jpg; do
         convert "$file" "${file%.jpg}.png"
@@ -108,3 +108,12 @@ fixpngs() {
         convert "$file" "${file%.png}.png"
     done
 }
+
+nvm() {
+# Set up Node Version Manager
+source /usr/share/nvm/init-nvm.sh
+}
+
+eval "$(zoxide init zsh)"
+
+source ~/.config/zsh/keybind.zshrc
