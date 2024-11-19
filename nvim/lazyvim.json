@@ -1,7 +1,9 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.dap.core",
     "lazyvim.plugins.extras.ai.copilot",
+    "lazyvim.plugins.extras.coding.mini-surround",
+    "lazyvim.plugins.extras.dap.core",
+    "lazyvim.plugins.extras.editor.dial",
     "lazyvim.plugins.extras.editor.harpoon2",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.java",
