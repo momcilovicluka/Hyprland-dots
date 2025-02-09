@@ -12,6 +12,10 @@ fuck() {
 
 #eval "$(navi widget zsh)"
 
+# autoload -U compinit && compinit
+
+# eval "$(register-python-argcomplete pipx)"
+
 export FZF_DEFAULT_COMMAND='find .'
 
 export ZSH="$HOME/.config/zsh/oh-my-zsh"
@@ -60,7 +64,7 @@ alias vim=nvim
 alias neovim=nvim
 
 alias icat='kitten icat'
-alias cat=bat
+# alias cat=bat
 
 alias fucking='sudo'
 alias uwu='sudo'
@@ -117,3 +121,5 @@ source /usr/share/nvm/init-nvm.sh
 eval "$(zoxide init zsh)"
 
 source ~/.config/zsh/keybind.zshrc
+# Created by `pipx` on 2025-01-02 18:09:07
+export PATH="$PATH:/home/luka/.local/bin"
