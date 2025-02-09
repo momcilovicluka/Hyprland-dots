@@ -218,16 +218,16 @@
 		}
 	},
 	"keyboard-state": {
-		//"numlock": true,
+		"numlock": true,
 		"capslock": true,
 		"format": {
-			"numlock": "N {icon}",
+			"numlock": "🔢{icon}",
 			"capslock": "󰪛 {icon}",
 		},
 		"format-icons": {
 			"locked": "",
 			"unlocked": ""
-		},
+		}
 	},
 	"memory": {
 		"interval": 10,
