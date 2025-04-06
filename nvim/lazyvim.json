@@ -6,14 +6,18 @@
     "lazyvim.plugins.extras.editor.dial",
     "lazyvim.plugins.extras.editor.harpoon2",
     "lazyvim.plugins.extras.formatting.prettier",
+    "lazyvim.plugins.extras.lang.angular",
+    "lazyvim.plugins.extras.lang.git",
     "lazyvim.plugins.extras.lang.java",
     "lazyvim.plugins.extras.lang.json",
     "lazyvim.plugins.extras.lang.markdown",
+    "lazyvim.plugins.extras.lang.python",
     "lazyvim.plugins.extras.lang.typescript",
     "lazyvim.plugins.extras.linting.eslint"
   ],
+  "install_version": 7,
   "news": {
     "NEWS.md": "10960"
   },
-  "version": 7
+  "version": 8
 }
