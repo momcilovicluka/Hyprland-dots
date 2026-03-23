@@ -113,7 +113,11 @@
         {
           "label": "󰃟 ",
           "command": "/home/luka/.config/hypr/scripts/Sunset.sh"
-        }
+        },
+	{
+	  "label": "🖊️",
+          "command": "hyprpicker -a -n"
+	}
       ]
     }
   }

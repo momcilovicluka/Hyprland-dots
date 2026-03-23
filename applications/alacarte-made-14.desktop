@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Hyprpicker
+Exec=sh -c "sleep 0.5; hyprpicker -a -n"
+Comment=
+Terminal=false
+Icon=/home/luka/Downloads/candy-icons/apps/scalable/color-picker.svg
+Type=Application

@@ -10,22 +10,25 @@ monitor_outputs=($(ls "$cache_dir"))
 for output in "${monitor_outputs[@]}"; do
     # Construct the full path to the cache file
     cache_file="$cache_dir$output"
-
+    
     # Check if the cache file exists for the current monitor output
     if [ -f "$cache_file" ]; then
         # Get the wallpaper path from the cache file
         wallpaper_path=$(cat "$cache_file")
-
+        
         # Copy the wallpaper to the location Rofi can access
         ln -sf "$wallpaper_path" "$HOME/.config/rofi/.current_wallpaper"
-
+        
         break  # Exit the loop after processing the first found monitor output
     fi
 done
 
 
 # execute pywal
-wal -i $wallpaper_path
+#wal -i $wallpaper_path --backend colorz --saturate 0.8
+#wallpaper_path without anyuthing before first slash
+wallpaper_path="/${wallpaper_path#*/}"
+wallust run $wallpaper_path #-s
 
 # execute pywal skipping tty and terminal
 #wal -i $wallpaper_path -s -t

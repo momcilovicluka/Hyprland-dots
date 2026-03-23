@@ -108,12 +108,15 @@
 		"format-alt": " {:%H:%M:%S}",
 		//"format-alt": " {:%H:%M   %Y, %d %B, %A}",
 		"format": " {:%H:%M:%S %a-%d-%m}",
+		"tooltip": true,
 		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"on-click-right": "mode",
 		"calendar": {
 			"mode": "year",
 			"mode-mon-col": 3,
 			"weeks-pos": "right",
 			"on-scroll": 1,
+			"on-click-right": "mode",
 			"format": {
 				"months": "<span color='#ffead3'><b>{}</b></span>",
 				"days": "<span color='#ecc6d9'><b>{}</b></span>",
@@ -547,7 +550,7 @@
 		"on-click-right": "~/.config/hypr/scripts/ChangeBlur.sh",
 	},
 	"mpris": {
-		"format": "{player_icon} {title}-{artist}",
+		"format": "{player_icon} {title}|{artist}",
 		"format-paused": "{player_icon} {status_icon} {title}",
 		"max-length": 100,
 		"interval": 2,

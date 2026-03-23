@@ -13,7 +13,8 @@
     "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.lang.python",
     "lazyvim.plugins.extras.lang.typescript",
-    "lazyvim.plugins.extras.linting.eslint"
+    "lazyvim.plugins.extras.linting.eslint",
+    "lazyvim.plugins.extras.util.dot"
   ],
   "install_version": 7,
   "news": {
