@@ -24,7 +24,7 @@ export SUDO_EDITOR=/usr/bin/nvim
 
 ZSH_THEME="mikeh"
 
-plugins=( 
+plugins=(
     fzf
     git
     archlinux
@@ -36,8 +36,8 @@ plugins=(
 
 # Download Znap, if it's not there yet.
 [[ -r ~/Repos/znap/znap.zsh ]] ||
-    git clone --depth 1 -- \
-        https://github.com/marlonrichert/zsh-snap.git ~/Repos/znap
+git clone --depth 1 -- \
+https://github.com/marlonrichert/zsh-snap.git ~/Repos/znap
 source ~/Repos/znap/znap.zsh  # Start Znap
 znap source marlonrichert/zsh-autocomplete
 
@@ -70,6 +70,8 @@ alias fucking='sudo'
 alias uwu='sudo'
 alias please='sudo'
 alias bruh='sudo'
+alias swww='awww'
+alias swww-daemon='awww-daemon'
 
 alias lg=lazygit
 alias gf='git fetch'
@@ -90,15 +92,15 @@ bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
 bindkey '^l' autosuggest-accept
 source $ZSH/oh-my-zsh.sh
 () {
-   local -a prefix=( '\e'{\[,O} )
-   local -a up=( ${^prefix}A ) down=( ${^prefix}B )
-   local key=
-   for key in $up[@]; do
-      bindkey "$key" up-line-or-history
-   done
-   for key in $down[@]; do
-      bindkey "$key" down-line-or-history
-   done
+    local -a prefix=( '\e'{\[,O} )
+    local -a up=( ${^prefix}A ) down=( ${^prefix}B )
+    local key=
+    for key in $up[@]; do
+        bindkey "$key" up-line-or-history
+    done
+    for key in $down[@]; do
+        bindkey "$key" down-line-or-history
+    done
 }
 
 jpgs2pngs() {
@@ -114,8 +116,8 @@ fixpngs() {
 }
 
 nvm() {
-# Set up Node Version Manager
-source /usr/share/nvm/init-nvm.sh
+    # Set up Node Version Manager
+    source /usr/share/nvm/init-nvm.sh
 }
 
 eval "$(zoxide init zsh)"
