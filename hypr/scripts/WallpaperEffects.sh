@@ -7,7 +7,9 @@
 current_wallpaper="$HOME/.config/rofi/.current_wallpaper"
 wallpaper_output="$HOME/.config/rofi/.modified_wallpaper"
 SCRIPTSDIR="$HOME/.config/hypr/scripts"
-focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
+#focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
+focused_monitor=$(hyprctl monitors -j | jq -r '.[] | select(.focused) | .name')
+
 
 # Directory for swaync
 iDIR="$HOME/.config/dunst/images"
@@ -40,7 +42,7 @@ declare -A effects=(
 
 # Function to apply no effects
 no-effects() {
-    swww img -o "$focused_monitor" "$current_wallpaper" $SWWW_PARAMS &
+    awww img -o "$focused_monitor" "$current_wallpaper" $SWWW_PARAMS &
     # Wait for swww command to complete
     wait $!
     # Run other commands after swww
@@ -61,22 +63,22 @@ main() {
     for effect in "${!effects[@]}"; do
         [[ "$effect" != "No Effects" ]] && options+=("$effect")
     done
-
+    
     # Show rofi menu and handle user choice
     choice=$(printf "%s\n" "${options[@]}" | LC_COLLATE=C sort | rofi -dmenu -p "Choose effect" -i -config ~/.config/rofi/config-wallpaper-effect.rasi)
-
+    
     # Process user choice
     if [[ -n "$choice" ]]; then
         if [[ "$choice" == "No Effects" ]]; then
             no-effects
-        elif [[ "${effects[$choice]+exists}" ]]; then
+            elif [[ "${effects[$choice]+exists}" ]]; then
             # Apply selected effect
             notify-send -u normal -i "$iDIR/bell3.png" "Applying $choice effects"
             eval "${effects[$choice]}"
             # Wait for effects to be applied
             sleep 1
-            # Execute swww command after image conversion
-            swww img -o "$focused_monitor" "$wallpaper_output" $SWWW_PARAMS &
+            # Execute awww command after image conversion
+            awww img -o "$focused_monitor" "$wallpaper_output" $SWWW_PARAMS &
             # Wait for swww command to complete
             wait $!
             # Wait for other commands to finish

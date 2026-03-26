@@ -8,64 +8,69 @@ pywal_script=$HOME/.config/hypr/scripts/PywalSwww.sh
 pywal_refresh=$HOME/.config/hypr/scripts/Refresh.sh
 
 change_swaybg(){
-  #pkill swww
-  #pkill swaybg
-  #swaybg -m fill -i ${RANDOMPICS}
-
-  pkill swaybg
-  #swww query || swww init
-  swww img ${RANDOMPICS} --transition-fps 60 --transition-type any --transition-duration 2
-  wal -i ${RANDOMPICS} -n
-  pywalfox update
-  pywal-discord -p /home/luka/.config/VencordDesktop/VencordDesktop/themes/
-  cp $HOME/.cache/wal/colors-rofi-dark.rasi $HOME/.config/rofi/pywal-color/pywal-theme.rasi
-  # for cava-pywal (note, need to manually restart cava once wallpaper changes)
-   ln -sf "$HOME/.cache/wal/cava-colors" "$HOME/.config/cava/config" || true
-  $pywal_script
-  $pywal_refresh
+    #pkill swww
+    #pkill swaybg
+    #swaybg -m fill -i ${RANDOMPICS}
+    
+    pkill swaybg
+    #swww query || swww init
+    awww img ${RANDOMPICS} --transition-fps 60 --transition-type any --transition-duration 2
+    ln -sfn "${RANDOMPICS}" "$HOME/.config/rofi/.current_wallpaper"
+    wal -i ${RANDOMPICS} -n
+    pywalfox update
+    pywal-discord -p /home/luka/.config/VencordDesktop/VencordDesktop/themes/
+    cp $HOME/.cache/wal/colors-rofi-dark.rasi $HOME/.config/rofi/pywal-color/pywal-theme.rasi
+    # for cava-pywal (note, need to manually restart cava once wallpaper changes)
+    ln -sf "$HOME/.cache/wal/cava-colors" "$HOME/.config/cava/config" || true
+    $pywal_script
+    $pywal_refresh
 }
 
 change_swww(){
-  pkill swaybg
-  #swww query || swww init
-  swww img ${RANDOMPICS} --transition-fps 60 --transition-type any --transition-duration 2
-  wal -i ${RANDOMPICS} -n
-  pywalfox update
-  pywal-discord -p /home/luka/.config/VencordDesktop/VencordDesktop/themes/
-  cp $HOME/.cache/wal/colors-rofi-dark.rasi $HOME/.config/rofi/pywal-color/pywal-theme.rasi
-  # for cava-pywal (note, need to manually restart cava once wallpaper changes)
-  ln -sf "$HOME/.cache/wal/cava-colors" "$HOME/.config/cava/config" || true
-  $pywal_script
-  $pywal_refresh
+    pkill swaybg
+    #swww query || swww init
+    awww img ${RANDOMPICS} --transition-fps 60 --transition-type any --transition-duration 2
+    ln -sfn "${RANDOMPICS}" "$HOME/.config/rofi/.current_wallpaper"
+    wal -i ${RANDOMPICS} -n
+    pywalfox update
+    pywal-discord -p /home/luka/.config/VencordDesktop/VencordDesktop/themes/
+    cp $HOME/.cache/wal/colors-rofi-dark.rasi $HOME/.config/rofi/pywal-color/pywal-theme.rasi
+    # for cava-pywal (note, need to manually restart cava once wallpaper changes)
+    ln -sf "$HOME/.cache/wal/cava-colors" "$HOME/.config/cava/config" || true
+    $pywal_script
+    $pywal_refresh
 }
 
 change_current(){
-  if pidof swaybg >/dev/null; then
-    change_swaybg
-  else
-    change_swww
-  fi
+    if pidof swaybg >/dev/null; then
+        change_swaybg
+    else
+        change_swww
+    fi
 }
 
 switch(){
-  if pidof swaybg >/dev/null; then
-    change_swww
-  else
-    change_swaybg
-  fi
+    if pidof swaybg >/dev/null; then
+        change_swww
+    else
+        change_swaybg
+    fi
 }
 
 case "$1" in
-	"swaybg")
-		change_swaybg
-		;;
-	"swww")
-		change_swww
-		;;
-  "s")
-		switch
-		;;
-	*)
-		change_current
-		;;
+    "swaybg")
+        change_swaybg
+    ;;
+    "swww")
+        change_swww
+    ;;
+    "awww")
+        change_swww
+    ;;
+    "s")
+        switch
+    ;;
+    *)
+        change_current
+    ;;
 esac

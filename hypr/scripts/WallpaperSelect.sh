@@ -34,7 +34,7 @@ COLORS="$HOME/.config/wofi/colors"
 
 # to check if swaybg is running
 if [[ $(pidof swaybg) ]]; then
-	pkill swaybg
+    pkill swaybg
 fi
 
 ## Wofi Command
@@ -48,48 +48,50 @@ fi
 rofi_command="rofi -show -dmenu -config ~/.config/rofi/config-wallpaper.rasi"
 
 menu() {
-	# Here we are looping in the PICS array that is composed of all images in the $DIR folder
-	for i in ${!PICS[@]}; do
-		# keeping the .gif to make sue you know it is animated
-		if [[ -z $(echo ${PICS[$i]} | grep .gif$) ]]; then
-			printf "$i. $(echo ${PICS[$i]} | cut -d. -f1)\x00icon\x1f${DIR}/${PICS[$i]}\n" # n°. <name_of_file_without_identifier>
-		else
-			printf "$i. ${PICS[$i]}\n"
-		fi
-	done
-
-	printf "$RANDOM_PIC_NAME"
+    # Here we are looping in the PICS array that is composed of all images in the $DIR folder
+    for i in ${!PICS[@]}; do
+        # keeping the .gif to make sue you know it is animated
+        if [[ -z $(echo ${PICS[$i]} | grep .gif$) ]]; then
+            printf "$i. $(echo ${PICS[$i]} | cut -d. -f1)\x00icon\x1f${DIR}/${PICS[$i]}\n" # n°. <name_of_file_without_identifier>
+        else
+            printf "$i. ${PICS[$i]}\n"
+        fi
+    done
+    
+    printf "$RANDOM_PIC_NAME"
 }
 
-swww query || swww-daemon &
+awww query || awww-daemon &
 
 main() {
-	#choice=$(menu | ${wofi_command})
-	choice=$(menu | ${rofi_command})
-
-	# no choice case
-	if [[ -z $choice ]]; then return; fi
-
-	# random choice case
-	if [ "$choice" = "$RANDOM_PIC_NAME" ]; then
-		swww img ${DIR}/${RANDOM_PIC} $SWWW_PARAMS
-		$pywal_script
-		$pywal_refresh
-		return
-	fi
-
-	pic_index=$(echo $choice | cut -d. -f1)
-	swww img ${DIR}/${PICS[$pic_index]} $SWWW_PARAMS
-	# for cava-pywal (note, need to manually restart cava once wallpaper changes)
-	ln -sf "$HOME/.cache/wal/cava-colors" "$HOME/.config/cava/config" || true
-	$pywal_script
-	$pywal_refresh
+    #choice=$(menu | ${wofi_command})
+    choice=$(menu | ${rofi_command})
+    
+    # no choice case
+    if [[ -z $choice ]]; then return; fi
+    
+    # random choice case
+    if [ "$choice" = "$RANDOM_PIC_NAME" ]; then
+        awww img ${DIR}/${RANDOM_PIC} $SWWW_PARAMS
+        ln -sfn "${DIR}/${RANDOM_PIC}" "$HOME/.config/rofi/.current_wallpaper"
+        $pywal_script
+        $pywal_refresh
+        return
+    fi
+    
+    pic_index=$(echo $choice | cut -d. -f1)
+    awww img ${DIR}/${PICS[$pic_index]} $SWWW_PARAMS
+    ln -sfn "${DIR}/${PICS[$pic_index]}" "$HOME/.config/rofi/.current_wallpaper"
+    # for cava-pywal (note, need to manually restart cava once wallpaper changes)
+    ln -sf "$HOME/.cache/wal/cava-colors" "$HOME/.config/cava/config" || true
+    $pywal_script
+    $pywal_refresh
 }
 
 # Check if rofi is already running
 if pidof rofi >/dev/null; then
-	pkill rofi
-	exit 0
+    pkill rofi
+    exit 0
 fi
 
 main
