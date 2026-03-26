@@ -1,51 +1,51 @@
 #!/bin/bash
 
+# This script will randomly go through the files of a directory, setting it
+# up as the wallpaper at regular intervals
+#
+# NOTE: this script is in bash (not posix shell), because the RANDOM variable
+# we use is not defined in posix
 pywal_script=$HOME/.config/hypr/scripts/PywalSwww.sh
 pywal_refresh=$HOME/.config/hypr/scripts/Refresh.sh
 
-# WALLPAPERS PATH
-DIR=$HOME/Pictures/wallpapers
-
-# Transition config (type swww img --help for more settings
-FPS=60
-TYPE="any"
-DURATION=1
-
-# wofi window config (in %)
-WIDTH=10
-HEIGHT=30
-
-SWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION"
-
-PICS=($(ls ${DIR} | grep -e ".jpg$" -e ".jpeg$" -e ".png$" -e ".gif$"))
-#PICS=($(find ${DIR} -type f -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.gif"))
-# remove the path from the array
-#for i in ${!PICS[@]}; do
-#    PICS[$i]=$(echo ${PICS[$i]} | rev | cut -d/ -f1 | rev)
-#done
-
-RANDOM_PIC=${PICS[$RANDOM % ${#PICS[@]}]}
-RANDOM_PIC_NAME="${#PICS[@]}. random"
-
-# WOFI STYLES
-CONFIG="$HOME/.config/wofi/WofiBig/config"
-STYLE="$HOME/.config/wofi/style.css"
-COLORS="$HOME/.config/wofi/colors"
-
-# to check if swaybg is running
-if [[ $(pidof swaybg) ]]; then
-    pkill swaybg
+if [[ $# -lt 1 ]] || [[ ! -d $1   ]]; then
+    echo "Usage:
+    $0 <dir containing images>"
+    exit 1
 fi
 
-## Wofi Command
-#wofi_command="wofi --show dmenu \
-#			--prompt choose...
-#			--conf $CONFIG --style $STYLE --color $COLORS \
-#			--width=$WIDTH% --height=$HEIGHT% \
-#			--cache-file=/dev/null \
-#			--hide-scroll --no-actions \
-#			--matching=fuzzy"
-rofi_command="rofi -show -dmenu -config ~/.config/rofi/config-wallpaper.rasi"
+# Edit below to control the images transition
+export SWWW_TRANSITION_FPS=60
+export SWWW_TRANSITION_STEP=2
+export AWWW_TRANSITION_FPS=60
+export AWWW_TRANSITION_STEP=2
+#export SWWW_TRANSITION_TYPE=random
+
+# This controls (in seconds) when to switch to the next image
+INTERVAL=60
+
+while true; do
+    find "$1" \
+    | while read -r img; do
+        echo "$((RANDOM % 1000)):$img"
+    done \
+    | sort -n | cut -d':' -f2- \
+    | while read -r img; do
+        pkill swaybg
+        awww query || awww-daemon&
+        awww img "$img" --transition-type any
+        ln -sfn "$img" "$HOME/.config/rofi/.current_wallpaper"
+        wal -i $img -n
+        pywalfox update
+        pywal-discord -p /home/luka/.config/VencordDesktop/VencordDesktop/themes/
+        cp $HOME/.cache/wal/colors-rofi-dark.rasi $HOME/.config/rofi/pywal-color/pywal-theme.rasi
+        # for cava-pywal (note, need to manually restart cava once wallpaper changes)
+        ln -sf "$HOME/.cache/wal/cava-colors" "$HOME/.config/cava/config" || true
+        $pywal_script "$img"
+        $pywal_refresh
+        sleep $INTERVAL
+    done
+done_command="rofi -show -dmenu -config ~/.config/rofi/config-wallpaper.rasi"
 
 menu() {
     # Here we are looping in the PICS array that is composed of all images in the $DIR folder
@@ -74,7 +74,7 @@ main() {
     if [ "$choice" = "$RANDOM_PIC_NAME" ]; then
         awww img ${DIR}/${RANDOM_PIC} $SWWW_PARAMS
         ln -sfn "${DIR}/${RANDOM_PIC}" "$HOME/.config/rofi/.current_wallpaper"
-        $pywal_script
+        $pywal_script "${DIR}/${RANDOM_PIC}"
         $pywal_refresh
         return
     fi
@@ -84,7 +84,7 @@ main() {
     ln -sfn "${DIR}/${PICS[$pic_index]}" "$HOME/.config/rofi/.current_wallpaper"
     # for cava-pywal (note, need to manually restart cava once wallpaper changes)
     ln -sf "$HOME/.cache/wal/cava-colors" "$HOME/.config/cava/config" || true
-    $pywal_script
+    $pywal_script "${DIR}/${PICS[$pic_index]}"
     $pywal_refresh
 }
 

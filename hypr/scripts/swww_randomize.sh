@@ -41,7 +41,7 @@ while true; do
         cp $HOME/.cache/wal/colors-rofi-dark.rasi $HOME/.config/rofi/pywal-color/pywal-theme.rasi
         # for cava-pywal (note, need to manually restart cava once wallpaper changes)
         ln -sf "$HOME/.cache/wal/cava-colors" "$HOME/.config/cava/config" || true
-        $pywal_script
+        $pywal_script "$img"
         $pywal_refresh
         sleep $INTERVAL
     done
