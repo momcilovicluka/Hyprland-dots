@@ -28,7 +28,7 @@ atleast=1920x1080
 
 # the menu command used when no query is provided
 sh_menu() {
-	: | rofi -dmenu -l 0 -p "Search wallhaven:"
+    : | rofi -show -dmenu -config ~/.config/rofi/config-wallpaper-download.rasi
 }
 
 ##########################
@@ -48,23 +48,23 @@ mkdir -p "$walldir" "$cachedir"
 
 # progress display command
 sh_info() {
-	printf "%s\n" "$1" >&2
-	notify-send "Walldl-V2" "$1"
-	[ -n "$2" ] && exit "$2"
+    printf "%s\n" "$1" >&2
+    notify-send "Walldl-V2" "$1"
+    [ -n "$2" ] && exit "$2"
 }
 
 # dependency checking
 dep_ck() {
-	for pr; do
-		command -v $pr >/dev/null 2>&1 || sh_info "command $pr not found, install: $pr" 1
-	done
+    for pr; do
+        command -v $pr >/dev/null 2>&1 || sh_info "command $pr not found, install: $pr" 1
+    done
 }
 dep_ck "$VIEWER" "curl" "jq"
 
 # clean up command that would be called when the program exits
 clean_up() {
-	printf "%s\n" "cleaning up..." >&2
-	rm -rf "$datafile" "$cachedir"
+    printf "%s\n" "cleaning up..." >&2
+    rm -rf "$datafile" "$cachedir"
 }
 
 # data file to store the api information
@@ -80,20 +80,20 @@ trap "clean_up" EXIT
 
 # request the search results for each page
 get_results() {
-	for page_no in $(seq $max_pages); do
-		{
-			json=$(
-				curl -s -G "https://wallhaven.cc/api/v1/search" \
-					-d "q=$1" \
-					-d "page=$page_no" \
-					-d "atleast=$atleast" \
-					-d "sorting=$sorting"
-			)
-			printf "%s\n" "$json" >>"$datafile"
-		} &
-		sleep 0.005
-	done
-	wait
+    for page_no in $(seq $max_pages); do
+        {
+            json=$(
+                curl -s -G "https://wallhaven.cc/api/v1/search" \
+                    -d "q=$1" \
+                    -d "page=$page_no" \
+                    -d "atleast=$atleast" \
+                    -d "sorting=$sorting"
+            )
+            printf "%s\n" "$json" >>"$datafile"
+        } &
+        sleep 0.005
+    done
+    wait
 }
 
 # search wallpapers
@@ -115,8 +115,8 @@ thumbnails=$(jq -r '.data[]?|.thumbs.'"$quality" <"$datafile")
 # download the thumbnails
 sh_info "caching thumbnails..."
 for url in $thumbnails; do
-	printf "url = %s\n" "$url"
-	printf "output = %s\n" "$cachedir/${url##*/}"
+    printf "url = %s\n" "$url"
+    printf "output = %s\n" "$cachedir/${url##*/}"
 done | curl -Z -K -
 #sh_info "downloaded thumbnails..."
 
@@ -136,11 +136,11 @@ image_ids="$($VIEWER $nsxiv_otps "$cachedir")"
 cd "$walldir"
 sh_info "downloading wallpapers..."
 for ids in $image_ids; do
-	ids="${ids##*/}"
-	ids="${ids%.*}"
-	url=$(jq -r '.data[]?|select( .id == "'$ids'" )|.path' <"$datafile")
-	printf "url = %s\n" "$url"
-	printf -- "-O\n"
+    ids="${ids##*/}"
+    ids="${ids%.*}"
+    url=$(jq -r '.data[]?|select( .id == "'$ids'" )|.path' <"$datafile")
+    printf "url = %s\n" "$url"
+    printf -- "-O\n"
 done | curl -K -
 
 sh_info "Wallpapers Downloaded: $walldir"
