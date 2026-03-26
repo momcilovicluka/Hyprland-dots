@@ -1,0 +1,136 @@
+/* config - Clipboard */
+
+configuration {
+    modi:                        "drun";
+    show-icons:                  false;
+  	drun-display-format:         "{name}";
+    font:                        "JetBrainsMono Nerd Font 14";
+}
+
+/* Config and colors ----------------------------------------------- */
+
+@import "default.rasi"
+
+/* Main Window ------------------------------------------------ */
+window {
+    width:                       100%;
+    height:                      100%;
+    margin:                      0px;
+    padding:                     0px;
+}
+
+/* ----- Main Box ----- */
+mainbox {
+    orientation:                 vertical;
+    children:                    [ "inputbar", "textbox-help", "message", "listview" ];
+    background-color:            transparent;
+
+    spacing:                      16px;
+    margin:                       0px;
+    padding:                      64px;
+}
+
+/* Inputbar --------------------------------------------------- */
+inputbar {
+    children:                    [ "dummy", "entry", "dummy" ];
+    border-radius:               24px;
+
+    spacing:                     0px;
+    padding:                     128px 64px;
+    orientation:                 horizontal;
+    background-image:            url("~/.current_wallpaper", width);
+}
+
+dummy {
+  background-color: transparent;
+}
+
+textbox-help {
+    expand: false;
+    content: " [CTRL DEL]  Delete \n [ALT DEL]   Wipe";
+
+    border-radius:                 12px;
+    background-color:              @shade-bg;
+    text-color:                    white;
+
+    margin:                        0px;
+    padding:                       6px;
+}
+
+textbox-icon {
+    expand:                      true;
+    background-color:            transparent;
+    text-color:                  inherit;
+    margin: 0px 0px 0px 25px;
+    content: "  ";
+}
+
+/* Entry input ------------------------------------------------ */
+entry {
+    cursor:                      inherit;
+    placeholder:                 "Search";
+    placeholder-color:           inherit;
+
+    border-radius:               12px;
+    background-color:            black / 48%;
+    text-color:                  @text;
+
+    padding:                     16px;
+    margin:                      0px;
+}
+
+/* Listview --------------------------------------------------- */
+listview {
+    background-color:            transparent;
+    orientation:                 vertical;
+    children:                    [ "message", "listview" ];
+}
+
+/* ---- Listview ---- */
+listview {
+    cursor:                      "default";
+    columns:                     2;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   true;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    background-color:            transparent;
+    text-color:                  @foreground;
+
+    spacing:                     12px;
+    margin:                      0px;
+    padding:                     0px;
+}
+
+/* ---- Elements ---- */
+element {
+    cursor:                      pointer;
+    border-radius:               10px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     6px;
+}
+
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        36px;
+    cursor:                      inherit;
+}
+
+element-text {
+    horizontal-align:            0.0;
+}
+
+@media(max-aspect-ratio: 1.8) {
+    element {
+        orientation:             vertical;
+    }
+}
